@@ -1,20 +1,10 @@
 <mat-toolbar class="flex justify-between items-center app-header">
+    <!-- Show menu icon when mobile and sidebar is closed -->
     <button mat-icon-button *ngIf="isMobile && !opened" (click)="toggleSidebar()">
       <mat-icon>menu</mat-icon>
     </button>
   
     <span class="flex-grow"></span>
-  
-    <div class="search-container">
-      <button mat-icon-button class="search-button">
-        <mat-icon>search</mat-icon>
-      </button>
-      <input 
-        type="text" 
-        placeholder="Search..." 
-        class="search-input"
-      />
-    </div>
   
     <mat-slide-toggle
       [checked]="isDarkTheme"
@@ -29,14 +19,14 @@
     </mat-slide-toggle>
   
     <button mat-icon-button color="primary">
-        <mat-icon>notifications</mat-icon>
-      </button>
-      <button mat-icon-button color="primary">
-        <mat-icon>message</mat-icon>
-      </button>
-      
+      <mat-icon>notifications</mat-icon>
+    </button>
+    <button mat-icon-button color="primary">
+      <mat-icon>message</mat-icon>
+    </button>
+  
     <button mat-icon-button>
-      <img src="./../../assets/logo.svg" alt="Account" class="account-icon" />
+      <img src="path/to/your/svg/spritesheet.svg#account-icon" alt="Account" class="account-icon" />
     </button>
   </mat-toolbar>
   

@@ -1,52 +1,31 @@
-import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { MatSidenavModule } from '@angular/material/sidenav'; 
-import { MatIconModule } from '@angular/material/icon'; 
-import { MatButtonModule } from '@angular/material/button';
-import { CommonModule } from '@angular/common'; 
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [MatSidenavModule, MatIconModule, MatButtonModule, CommonModule],
+  imports: [MatSidenavModule, MatIconModule, CommonModule],
   templateUrl: './sidebar.component.html',
 })
-export class SidebarComponent implements OnInit {
-  @Input() opened: boolean = true; // Sidebar opened by default on larger screens
-  isMobile = false; // Track mobile state
-  selected: string = ''; // Track the selected menu item
+export class SidebarComponent {
+  @Input() opened: boolean = false; // Accept sidebar state as input
+  @Input() isMobile: boolean = false; // Accept mobile state as input
+  @Output() close = new EventEmitter<void>(); // Emit close event for sidebar
 
-  ngOnInit() {
-    this.adjustSidebarOnLoad(); // Adjust sidebar on page load
-  }
+  selected: string = ''; // Track selected menu item
 
-  // Handle window resize to determine if it's mobile view
-  @HostListener('window:resize', ['$event'])
-  onResize() {
-    this.isMobile = window.innerWidth <= 1025;
-    if (this.isMobile) {
-      this.opened = false; // Hide sidebar on mobile by default
-    } else {
-      this.opened = true; // Show sidebar on larger screens
-    }
-  }
-
-  // Adjust sidebar on initial page load
-  adjustSidebarOnLoad() {
-    this.isMobile = window.innerWidth <= 1025;
-    if (this.isMobile) {
-      this.opened = false; // Hide sidebar if on mobile
-    } else {
-      this.opened = true; // Show sidebar on larger screens
-    }
-  }
-
-  // Toggle the sidebar state
   toggleSidebar() {
-    this.opened = !this.opened;
+    this.opened = !this.opened; // Toggle sidebar visibility
   }
 
-  // Toggle the selected menu item
-  toggleMenu(menu: string) {
-    this.selected = this.selected === menu ? '' : menu;
+  closeSidebar() {
+    this.opened = false; // Close the sidebar
+    this.close.emit(); // Emit the close event
+  }
+
+  toggleMenu(selectedMenu: string) {
+    this.selected = this.selected === selectedMenu ? '' : selectedMenu; // Toggle menu selection
   }
 }

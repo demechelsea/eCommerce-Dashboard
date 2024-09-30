@@ -1,7 +1,7 @@
 import { Component, HostListener } from '@angular/core';
+import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,27 +9,37 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [HeaderComponent, DashboardComponent, SidebarComponent, CommonModule]
+  imports: [HeaderComponent, SidebarComponent, DashboardComponent, CommonModule]
 })
 export class AppComponent {
-  isDarkTheme: boolean = false; // Default to light theme
-  isMobile: boolean = false; // Track mobile state
-  sidebarOpened: boolean = false; // Default sidebar state
+  isDarkTheme: boolean = false; // Track the theme
+  isMobile: boolean = false; // Determine if the screen is mobile size
+  sidebarOpened: boolean = false; // Sidebar state
 
-  toggleTheme(isDark: boolean) {
-    this.isDarkTheme = isDark; // Set the theme state
-  }
-
+  // Toggle the sidebar visibility
   toggleSidebar() {
-    this.sidebarOpened = !this.sidebarOpened; // Toggle sidebar visibility
+    this.sidebarOpened = !this.sidebarOpened; // Toggle sidebar state
   }
 
-  // Handle window resize
+  // Close the sidebar
+  closeSidebar() {
+    this.sidebarOpened = false; // Set sidebar to closed state
+  }
+
+  // Handle window resize events
   @HostListener('window:resize', ['$event'])
   onResize() {
-    this.isMobile = window.innerWidth <= 1025; // Determine if mobile
-    if (!this.isMobile) {
-      this.sidebarOpened = true; // Always show sidebar on larger screens
-    }
+    this.isMobile = window.innerWidth <= 1025; // Check if the screen is mobile
+    this.sidebarOpened = !this.isMobile; // Open sidebar on larger screens
+  }
+
+  // Initialize component
+  ngOnInit() {
+    this.onResize(); // Check screen size on component load
+  }
+
+  // Toggle theme
+  toggleTheme(isDark: boolean) {
+    this.isDarkTheme = isDark; // Update the theme state
   }
 }

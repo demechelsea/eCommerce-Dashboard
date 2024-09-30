@@ -1,15 +1,14 @@
 <mat-sidenav-container class="flex h-full">
     <mat-sidenav mode="side" [opened]="opened" class="sidebar" style="width: 290px">
-      <!-- Sidebar content -->
-  
       <!-- SIDEBAR HEADER -->
       <div class="sidebar-header flex items-center justify-between p-4">
         <div class="flex items-center">
-          <mat-icon svgIcon="logo"></mat-icon> <!-- Using the logo from the SVG file -->
+          <mat-icon svgIcon="logo"></mat-icon>
           <span class="ml-2 mat-body-1">TailAdmin</span>
         </div>
   
-        <button mat-icon-button (click)="toggleSidebar()" *ngIf="isMobile && opened">
+        <!-- Backward icon visible on mobile when sidebar is open -->
+        <button mat-icon-button (click)="closeSidebar()" *ngIf="isMobile && opened">
           <mat-icon>arrow_back</mat-icon>
         </button>
       </div>

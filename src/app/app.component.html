@@ -1,5 +1,5 @@
 <div class="flex h-screen" [ngClass]="isDarkTheme ? 'myapp-dark-theme' : 'myapp-light-theme'">
-  <app-sidebar [opened]="sidebarOpened"></app-sidebar> <!-- Show sidebar -->
+  <app-sidebar [opened]="sidebarOpened" [isMobile]="isMobile" (close)="closeSidebar()"></app-sidebar> <!-- Pass state to sidebar -->
 
   <div class="main-content flex flex-col flex-grow">
     <app-header 
@@ -10,7 +10,7 @@
     </app-header>
 
     <div class="content flex-grow p-4">
-      <app-dashboard [isDarkTheme]="isDarkTheme"></app-dashboard> <!-- Pass the theme state -->
+      <app-dashboard [isDarkTheme]="isDarkTheme"></app-dashboard>
     </div>
   </div>
 </div>
