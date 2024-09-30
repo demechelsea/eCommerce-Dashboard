@@ -1,0 +1,51 @@
+<mat-sidenav-container class="flex h-full">
+    <mat-sidenav mode="side" [opened]="opened" class="sidebar" style="width: 290px">
+      <!-- Sidebar content -->
+  
+      <!-- SIDEBAR HEADER -->
+      <div class="sidebar-header flex items-center justify-between p-4">
+        <div class="flex items-center">
+          <mat-icon svgIcon="logo"></mat-icon> <!-- Using the logo from the SVG file -->
+          <span class="ml-2 mat-body-1">TailAdmin</span>
+        </div>
+  
+        <button mat-icon-button (click)="toggleSidebar()" *ngIf="isMobile && opened">
+          <mat-icon>arrow_back</mat-icon>
+        </button>
+      </div>
+  
+      <!-- SIDEBAR MENU -->
+      <nav>
+        <ul class="menu-list">
+          <li>
+            <button
+              mat-button
+              (click)="toggleMenu('Dashboard')"
+              [ngClass]="{ 'active': selected === 'Dashboard' }"
+              class="flex items-center justify-between w-full p-2 rounded-md hover:bg-gray-200"
+            >
+              <div class="flex items-center">
+                <mat-icon>dashboard</mat-icon>
+                <span class="ml-2">Dashboard</span>
+              </div>
+              <mat-icon class="expand-icon" [ngClass]="{ 'rotate-180': selected === 'Dashboard' }">expand_more</mat-icon>
+            </button>
+            <div class="submenu" *ngIf="selected === 'Dashboard'">
+              <ul class="pl-8">
+                <li>
+                  <a href="#" class="block text-gray-700 hover:text-black py-1">eCommerce</a>
+                </li>
+                <li>
+                  <a href="#" class="block text-gray-700 hover:text-black py-1">Analytics</a>
+                </li>
+                <li>
+                  <a href="#" class="block text-gray-700 hover:text-black py-1">Marketing</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </mat-sidenav>
+  </mat-sidenav-container>
+  
