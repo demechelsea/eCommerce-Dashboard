@@ -2,7 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle'; 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,20 +10,21 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [MatToolbarModule, MatIconModule, MatButtonModule, MatSlideToggleModule, CommonModule],
   templateUrl: './header.component.html',
+  styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
   @Output() themeToggle = new EventEmitter<boolean>();
-  @Output() sidebarToggle = new EventEmitter<void>(); // Emit to toggle sidebar
-  @Input() isMobile: boolean = false; // Accept mobile state as input
-  @Input() opened: boolean = false; // Accept sidebar opened state as input
-  isDarkTheme: boolean = false; // Default to light theme
+  @Output() sidebarToggle = new EventEmitter<void>();
+  @Input() isMobile: boolean = false;
+  @Input() opened: boolean = false;
+  @Input() isDarkTheme: boolean = false;
 
   toggleTheme(event: any) {
-    this.isDarkTheme = event.checked; // Update theme based on the toggle state
-    this.themeToggle.emit(this.isDarkTheme); // Emit the current theme state
+    this.isDarkTheme = event.checked; // Toggle between light and dark theme
+    this.themeToggle.emit(this.isDarkTheme);
   }
 
   toggleSidebar() {
-    this.sidebarToggle.emit(); // Notify parent to toggle the sidebar
+    this.sidebarToggle.emit();
   }
 }

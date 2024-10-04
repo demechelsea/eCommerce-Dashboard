@@ -1,15 +1,16 @@
-<div class="flex h-screen" [ngClass]="isDarkTheme ? 'myapp-dark-theme' : 'myapp-light-theme'">
-  <app-sidebar [opened]="sidebarOpened" [isMobile]="isMobile" (close)="closeSidebar()"></app-sidebar> <!-- Pass state to sidebar -->
+<div class="flex h-screen">
+  <app-sidebar [opened]="sidebarOpened" [isMobile]="isMobile" [isDarkTheme]="isDarkTheme" (close)="closeSidebar()"></app-sidebar>
 
-  <div class="main-content flex flex-col flex-grow">
+  <div class="main-content flex flex-col flex-grow" [ngClass]="isDarkTheme ? 'myapp-dark-theme' : 'myapp-light-theme'">
     <app-header 
       (themeToggle)="toggleTheme($event)" 
       [isMobile]="isMobile" 
       [opened]="sidebarOpened" 
+      [isDarkTheme]="isDarkTheme"
       (sidebarToggle)="toggleSidebar()">
     </app-header>
 
-    <div class="content flex-grow p-4">
+    <div class="content flex-grow p-10 body-content">
       <app-dashboard [isDarkTheme]="isDarkTheme"></app-dashboard>
     </div>
   </div>

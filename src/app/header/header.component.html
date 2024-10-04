@@ -1,32 +1,37 @@
-<mat-toolbar class="flex justify-between items-center app-header">
-    <!-- Show menu icon when mobile and sidebar is closed -->
-    <button mat-icon-button *ngIf="isMobile && !opened" (click)="toggleSidebar()">
-      <mat-icon>menu</mat-icon>
-    </button>
-  
-    <span class="flex-grow"></span>
-  
-    <mat-slide-toggle
-      [checked]="isDarkTheme"
-      (change)="toggleTheme($event)" 
-      [color]="isDarkTheme ? 'accent' : 'primary'"
-      aria-label="Toggle theme"
-    >
-      <span>
-        <mat-icon *ngIf="!isDarkTheme">wb_sunny</mat-icon>
-        <mat-icon *ngIf="isDarkTheme">nightlight_round</mat-icon>
-      </span>
-    </mat-slide-toggle>
-  
-    <button mat-icon-button color="primary">
-      <mat-icon>notifications</mat-icon>
-    </button>
-    <button mat-icon-button color="primary">
-      <mat-icon>message</mat-icon>
-    </button>
-  
-    <button mat-icon-button>
-      <img src="path/to/your/svg/spritesheet.svg#account-icon" alt="Account" class="account-icon" />
-    </button>
-  </mat-toolbar>
-  
+<mat-toolbar class="flex justify-between items-center app-header no-padding">
+  <button mat-icon-button *ngIf="isMobile && !opened" (click)="toggleSidebar()">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-bottom md:px-6 2xl:px-11">
+    <div class="search-container flex items-center" style="width: 500px;">
+      <button mat-icon-button class="search-button">
+        <mat-icon>search</mat-icon>
+      </button>
+      <input type="text" placeholder="Type to search..." class="w-full bg-transparent pl-2 pr-4 focus:outline-none text-base">
+    </div>
+
+    <div class="flex items-center space-x-4">
+      <mat-slide-toggle
+        [checked]="isDarkTheme"
+        (change)="toggleTheme($event)"
+        class="theme-toggle"
+        aria-label="Toggle theme">
+      </mat-slide-toggle>
+
+      <button mat-icon-button class="icon-button">
+        <mat-icon>notifications</mat-icon>
+      </button>
+      <button mat-icon-button class="icon-button">
+        <mat-icon>message</mat-icon>
+      </button>
+      <div class="account-container flex items-center">
+        <div class="account-info">
+          <span class="block text-sm font-medium">Thomas Anree</span>
+          <span class="block text-xs font-medium">UX Designer</span>
+        </div>
+        <img src="./../../assets/images/pro.jpg" alt="Profile Image" class="account-image rounded-full w-8 h-8">
+      </div>
+    </div>
+  </div>
+</mat-toolbar>

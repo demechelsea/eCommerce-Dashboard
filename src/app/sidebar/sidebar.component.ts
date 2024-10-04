@@ -8,10 +8,12 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [MatSidenavModule, MatIconModule, CommonModule],
   templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
   @Input() opened: boolean = false; // Accept sidebar state as input
   @Input() isMobile: boolean = false; // Accept mobile state as input
+  @Input() isDarkTheme: boolean = false; // Accept theme state as input
   @Output() close = new EventEmitter<void>(); // Emit close event for sidebar
 
   selected: string = ''; // Track selected menu item

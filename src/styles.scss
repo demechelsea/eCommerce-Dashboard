@@ -1,1 +1,120 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+
+// Import Tailwind CSS
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// Define light theme colors
+$myapp-light-primary: mat.m2-define-palette(mat.$m2-indigo-palette);
+$myapp-light-accent: mat.m2-define-palette(mat.$m2-pink-palette, A200, A100, A400);
+$myapp-light-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+// Define the light theme
+$myapp-light-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $myapp-light-primary,
+    accent: $myapp-light-accent,
+    warn: $myapp-light-warn,
+  ),
+));
+
+// Define dark theme colors
+$myapp-dark-primary: mat.m2-define-palette(mat.$m2-blue-palette); // Change to blue palette
+$myapp-dark-accent: mat.m2-define-palette(mat.$m2-amber-palette, A200, A100, A400);
+
+// Define the dark theme
+$myapp-dark-theme: mat.m2-define-dark-theme((
+  color: (
+    primary: $myapp-dark-primary,
+    accent: $myapp-dark-accent,
+  ),
+));
+
+// Define sidebar background for both light and dark themes
+$sidebar-dark-bg: #243040;
+$sidebar-light-bg: #1c2333;
+
+// Apply core theme styles once
+@include mat.core-theme($myapp-light-theme);
+@include mat.core-theme($myapp-dark-theme);
+
+
+// Set the height of the toolbar
+mat-toolbar {
+  height: 80px !important;
+  background-color: mat.m2-get-color-from-palette($myapp-light-primary);
+}
+
+// Remove padding from mat-toolbar
+.no-padding {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+
+
+.myapp-dark-theme mat-icon {
+  color: white; // White icon color for dark theme
+}
+
+// Sidebar styles for both themes
+.myapp-light-theme mat-sidenav {
+  width: 290px;
+  background-color: $sidebar-light-bg;
+  border-radius: 0;
+}
+
+.myapp-dark-theme mat-sidenav {
+  width: 290px;
+  background-color: $sidebar-dark-bg;
+  border-radius: 0
+}
+
+.myapp-light-theme .app-header,
+.myapp-dark-theme .dashboard-content
+ {
+  background-color: #ffffff; // Light background
+  color: black; // Light text color
+}
+
+.myapp-dark-theme .dashboard-content,
+.myapp-dark-theme .app-header {
+  background-color: #243040; // Dark background
+  color: white; // Dark text color
+}
+
+.myapp-light-theme .body-content {
+  background-color: #f1f4f9; // Dark background
+  color: black; // Dark text color
+}
+
+.myapp-dark-theme .body-content {
+  background-color: #1a232c; // Dark background
+  color: white; // Dark text color
+}
+
+// Smooth transition for theme changes
+.dashboard-content,
+.app-header,
+.body-content
+mat-side {
+  transition: background-color 0.01s ease, color 0.01s ease;
+}
+
+// Custom styles for theme toggle
+.theme-toggle {
+  .mat-slide-toggle-thumb {
+    background-color: mat.m2-get-color-from-palette($myapp-light-primary, 500);
+  }
+
+  &.mat-checked .mat-slide-toggle-thumb {
+    background-color: mat.m2-get-color-from-palette($myapp-dark-primary, 500);
+  }
+}
+
+// Custom utility class for bottom shadow
+.shadow-bottom {
+  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.1);
+}
+
