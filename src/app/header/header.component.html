@@ -1,36 +1,133 @@
 <mat-toolbar class="flex justify-between items-center app-header no-padding">
-  <button mat-icon-button *ngIf="isMobile && !opened" (click)="toggleSidebar()">
-    <mat-icon>menu</mat-icon>
-  </button>
 
-  <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-bottom md:px-6 2xl:px-11">
+
+  <div class="flex flex-grow items-center justify-between px-4 py-4 md:px-6 2xl:px-11"
+    [ngClass]="{ 'shadow-bottom': !isDarkTheme }">
+    <button mat-icon-button *ngIf="isMobile && !opened" (click)="toggleSidebar()">
+      <mat-icon>menu</mat-icon>
+    </button>
     <div class="search-container flex items-center" style="width: 500px;">
       <button mat-icon-button class="search-button">
         <mat-icon>search</mat-icon>
       </button>
-      <input type="text" placeholder="Type to search..." class="w-full bg-transparent pl-2 pr-4 focus:outline-none text-base">
+      <input type="text" placeholder="Type to search..."
+        class="w-full bg-transparent pl-2 pr-4 focus:outline-none text-base">
     </div>
 
-    <div class="flex items-center space-x-4">
-      <mat-slide-toggle
-        [checked]="isDarkTheme"
-        (change)="toggleTheme($event)"
-        class="theme-toggle"
-        aria-label="Toggle theme">
-      </mat-slide-toggle>
+    <div class="flex items-center gap-3 2xsm:gap-7">
+      <ul class="flex items-center gap-2 2xsm:gap-4">
+        <li>
+          <mat-slide-toggle [checked]="isDarkTheme" (change)="toggleTheme($event)" class="theme-toggle"
+            aria-label="Toggle theme">
+          </mat-slide-toggle>
+        </li>
 
-      <button mat-icon-button class="icon-button">
-        <mat-icon>notifications</mat-icon>
-      </button>
-      <button mat-icon-button class="icon-button">
-        <mat-icon>message</mat-icon>
-      </button>
-      <div class="account-container flex items-center">
-        <div class="account-info">
-          <span class="block text-sm font-medium">Thomas Anree</span>
-          <span class="block text-xs font-medium">UX Designer</span>
+        <!-- <button mat-icon-button class="icon-button">
+          <mat-icon>notifications</mat-icon>
+        </button> -->
+        <li class="relative" (document:click)="closeDropdown($event)">
+          <!-- Notification Button -->
+          <a
+            class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4"
+            href="#" (click)="toggleDropdown($event)"
+          >
+            <span
+              *ngIf="notifying"
+              class="absolute -top-0.5 right-0 z-1 h-2 w-2 rounded-full bg-meta-1"
+            >
+              <span
+                class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"
+              ></span>
+            </span>
+        
+            <!-- Notification icon -->
+            <a href="index.html">
+              <img class="fill-current duration-300 ease-in-out" src="./assets/svgs/notification.svg" alt="logo">
+            </a>
+            <!-- <mat-icon >notifications</mat-icon> -->
+          </a>
+        
+          <!-- Dropdown Start -->
+          <div
+            *ngIf="dropdownOpen"
+            class="absolute -right-27 mt-2.5 flex h-90 w-75 flex-col rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark sm:right-0 sm:w-80"
+          >
+            <div class="px-4.5 py-3">
+              <h5
+                class="text-sm font-medium"
+                [ngClass]="{ 'text-bodydark2': !isDarkTheme, 'text-white': isDarkTheme }"
+              >
+                Notification
+              </h5>
+            </div>
+        
+            <ul class="flex h-auto flex-col overflow-y-auto">
+              <!-- Example notification items -->
+              <li>
+                <a
+                  class="flex flex-col gap-2.5 border-t border-stroke px-4.5 py-3 hover:bg-gray-2 dark:border-strokedark dark:hover:bg-meta-4"
+                  href="#"
+                >
+                  <p class="text-sm">
+                    <span
+                      [ngClass]="{ 'text-black': !isDarkTheme, 'text-white': isDarkTheme }"
+                    >
+                      Edit your information in a swipe
+                    </span>
+                    Sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim.
+                  </p>
+                  <p class="text-xs">
+                    <span
+                      [ngClass]="{ 'text-black': !isDarkTheme, 'text-white': isDarkTheme }"
+                    >
+                      12 May, 2025
+                    </span>
+                  </p>
+                </a>
+              </li>
+              <!-- Additional notifications can be added here -->
+            </ul>
+          </div>
+          <!-- Dropdown End -->
+        </li>
+        
+
+
+        <li class="relative" x-data="{ dropdownOpen: false, notifying: true }">
+          <a class="relative flex h-8.5 w-8.5 items-center justify-center rounded-full border-[0.5px] border-stroke bg-gray hover:text-primary dark:border-strokedark dark:bg-meta-4 dark:text-white"
+            href="#">
+            <span :class="!notifying &amp;&amp; 'hidden'"
+              class="absolute -right-0.5 -top-0.5 z-1 h-2 w-2 rounded-full bg-meta-1">
+              <span
+                class="absolute -z-1 inline-flex h-full w-full animate-ping rounded-full bg-meta-1 opacity-75"></span>
+            </span>
+            <a href="index.html">
+              <img class="fill-current duration-300 ease-in-out" src="./assets/svgs/message.svg" alt="logo">
+            </a>
+
+          </a>
+        </li>
+        <!-- <button mat-icon-button class="icon-button">
+          <mat-icon>message</mat-icon>
+        </button> -->
+      </ul>
+      <div class="relative">
+        <div class="flex items-center gap-4">
+          <span class="hidden text-right lg:block">
+            <span
+            class="block text-sm font-medium"
+            [ngClass]="{ 'text-black': !isDarkTheme, 'text-white': isDarkTheme }"
+          >
+            Thomas Anree
+          </span>
+                      <span class="block text-xs font-medium">UX Designer</span>
+          </span>
+          <span class="h-12 w-12 rounded-full">
+            <img src="./assets/images/user.png" alt="Profile Image">
+          </span>
+          <mat-icon class="expand-icon text-[20px]">expand_more</mat-icon>
         </div>
-        <img src="./../../assets/images/pro.jpg" alt="Profile Image" class="account-image rounded-full w-8 h-8">
+
       </div>
     </div>
   </div>

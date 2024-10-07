@@ -19,6 +19,9 @@ export class HeaderComponent {
   @Input() opened: boolean = false;
   @Input() isDarkTheme: boolean = false;
 
+  dropdownOpen: boolean = false;
+  notifying: boolean = true;
+
   toggleTheme(event: any) {
     this.isDarkTheme = event.checked; // Toggle between light and dark theme
     this.themeToggle.emit(this.isDarkTheme);
@@ -26,5 +29,18 @@ export class HeaderComponent {
 
   toggleSidebar() {
     this.sidebarToggle.emit();
+  }
+
+  toggleDropdown(event: MouseEvent) {
+    event.preventDefault();
+    this.dropdownOpen = !this.dropdownOpen;
+    this.notifying = false; // Hide the notification badge when opened
+  }
+
+  closeDropdown(event: Event) {
+    // Close dropdown if clicked outside
+    if (!(event.target as HTMLElement).closest('.relative')) {
+      this.dropdownOpen = false;
+    }
   }
 }

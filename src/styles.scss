@@ -9,7 +9,8 @@
 $myapp-light-primary: mat.m2-define-palette(mat.$m2-indigo-palette);
 $myapp-light-accent: mat.m2-define-palette(mat.$m2-pink-palette, A200, A100, A400);
 $myapp-light-warn: mat.m2-define-palette(mat.$m2-red-palette);
-
+$sidebar-dark-bg: #243040; // Dark theme background
+$sidebar-light-bg: #1c2333; // Light theme background
 // Define the light theme
 $myapp-light-theme: mat.m2-define-light-theme((
   color: (
@@ -31,9 +32,6 @@ $myapp-dark-theme: mat.m2-define-dark-theme((
   ),
 ));
 
-// Define sidebar background for both light and dark themes
-$sidebar-dark-bg: #243040;
-$sidebar-light-bg: #1c2333;
 
 // Apply core theme styles once
 @include mat.core-theme($myapp-light-theme);
@@ -52,30 +50,27 @@ mat-toolbar {
   padding-right: 0 !important;
 }
 
-
-
-.myapp-dark-theme mat-icon {
-  color: white; // White icon color for dark theme
-}
-
-// Sidebar styles for both themes
-.myapp-light-theme mat-sidenav {
-  width: 290px;
-  background-color: $sidebar-light-bg;
-  border-radius: 0;
-}
-
+.myapp-light-theme mat-sidenav,
 .myapp-dark-theme mat-sidenav {
-  width: 290px;
-  background-color: $sidebar-dark-bg;
-  border-radius: 0
+  border-radius: 0 !important; // Remove rounded corners
 }
 
-.myapp-light-theme .app-header,
-.myapp-dark-theme .dashboard-content
+
+
+.myapp-light-theme .dashboard-content
  {
   background-color: #ffffff; // Light background
   color: black; // Light text color
+}
+
+.myapp-light-theme mat-sidenav{
+  background-color: #1c2333; // Dark background
+  color: #DEEFEE; // Dark text color
+}
+
+.myapp-dark-theme mat-sidenav {
+  background-color: #243040; // Dark background
+  color: #DEEFEE; // Dark text color
 }
 
 .myapp-dark-theme .dashboard-content,
@@ -115,6 +110,15 @@ mat-side {
 
 // Custom utility class for bottom shadow
 .shadow-bottom {
-  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
+.bg-primary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(60 80 224 / var(--tw-bg-opacity));
+}
+
+.bg-stroke {
+  --tw-bg-opacity: 1;
+  background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
