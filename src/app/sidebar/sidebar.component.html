@@ -1,4 +1,5 @@
-<mat-sidenav-container class="flex h-full" [ngClass]="isDarkTheme ? 'myapp-dark-theme' : 'myapp-light-theme'">
+<mat-sidenav-container class="mat-drawer-inner-container"
+  [ngClass]="isDarkTheme ? 'myapp-dark-theme' : 'myapp-light-theme'">
   <mat-sidenav mode="side" [opened]="opened" style="width: 290px">
     <div class="flex items-center justify-between gap-2 px-6 py-[26px] lg:py-[26px]">
       <a href="index.html">
@@ -17,7 +18,7 @@
         <div>
           <h3 class="mb-4 ml-4 text-sm font-medium text-bodydark2">MENU</h3>
           <ul class="mb-6 flex flex-col gap-1.5">
-            <li >
+            <li>
               <button mat-button (click)="toggleMenu('Dashboard')"
                 [ngClass]="{ 'active': selected === 'Dashboard', 'bg-[#333b48]': selected === 'Dashboard' }"
                 class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
@@ -27,23 +28,29 @@
                   [ngClass]="{ 'rotate-180': selected === 'Dashboard' }">expand_more</mat-icon>
               </button>
               <div class="translate transform overflow-hidden block" *ngIf="selected === 'Dashboard'">
-                <ul class="mb-5.5 mt-4 flex flex-col gap-2.5 pl-6">
+                <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
                   <li><a
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                      href="#" class="block py-1">eCommerce</a>
-
+                      href="#">eCommerce</a>
                   </li>
-                  <li><a href="#" class="block py-1">AnalyticsPro</a> <span
-                      class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Analytics
+                      <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
                   </li>
-                  <li><a href="#" class="block py-1">MarketingPro</a> <span
-                      class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Marketing
+                      <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
                   </li>
-                  <li><a href="#" class="block py-1">CRMPro</a> <span
-                      class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">CRM
+                      <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
                   </li>
-                  <li><a href="#" class="block py-1">StocksPro</a><span
-                      class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Stocks<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
                   </li>
                 </ul>
               </div>
@@ -62,8 +69,8 @@
 
             <li>
               <button mat-button (click)="toggleMenu('Profile')" [ngClass]="{ 'bg-[#333b48]': selected === 'Profile' }"
-              class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
-              <div class="flex items-center">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                <div class="flex items-center">
                   <mat-icon class="text-[20px]">person</mat-icon>
                   <span class="ml-1">Profile</span>
                 </div>
@@ -74,15 +81,22 @@
               <button mat-button (click)="toggleMenu('Task')"
                 [ngClass]="{ 'active': selected === 'Task', 'bg-[#333b48]': selected === 'Task' }"
                 class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
-                  <mat-icon class="text-[20px]">task</mat-icon>
-                  Task
+                <mat-icon class="text-[20px]">task</mat-icon>
+                Task
                 <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
                   [ngClass]="{ 'rotate-180': selected === 'Task' }">expand_more</mat-icon>
               </button>
-              <div class="m2-submenu" *ngIf="selected === 'Task'">
-                <ul class="pl-8 text-gray-400">
-                  <li><a href="#" class="block py-1">ListPro</a></li>
-                  <li><a href="#" class="block py-1">Kanban</a></li>
+              <div class="translate transform overflow-hidden block" *ngIf="selected === 'Task'">
+                <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">List
+                      <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Kanban<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
                 </ul>
               </div>
             </li>
@@ -91,17 +105,27 @@
               <button mat-button (click)="toggleMenu('Forms')"
                 [ngClass]="{ 'active': selected === 'Forms', 'bg-[#333b48]': selected === 'Forms' }"
                 class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
-                  <mat-icon class="text-[20px]">assignment</mat-icon>
-                 Forms
+                <mat-icon class="text-[20px]">assignment</mat-icon>
+                Forms
                 <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
                   [ngClass]="{ 'rotate-180': selected === 'Forms' }">expand_more</mat-icon>
               </button>
-              <div class="m2-submenu" *ngIf="selected === 'Forms'">
-                <ul class="pl-8 text-gray-400">
-                  <li><a href="#" class="block py-1">Form Elements</a></li>
-                  <li><a href="#" class="block py-1">Pro Form ElementsPro</a></li>
-                  <li><a href="#" class="block py-1">Form Layout</a></li>
-                  <li><a href="#" class="block py-1">Pro Form Layout</a></li>
+              <div class="translate transform overflow-hidden block" *ngIf="selected === 'Forms'">
+                <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Form
+                      Elements</a></li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pro
+                      Form Elements<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Form
+                      Layout</a></li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pro
+                      Form Layout<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
                 </ul>
               </div>
             </li>
@@ -110,15 +134,21 @@
               <button mat-button (click)="toggleMenu('Tables')"
                 [ngClass]="{ 'active': selected === 'Tables', 'bg-[#333b48]': selected === 'Tables' }"
                 class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
-                  <mat-icon class="text-[20px]">table_chart</mat-icon>
-                  Tables
+                <mat-icon class="text-[20px]">table_chart</mat-icon>
+                Tables
                 <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
                   [ngClass]="{ 'rotate-180': selected === 'Tables' }">expand_more</mat-icon>
               </button>
-              <div class="m2-submenu" *ngIf="selected === 'Tables'">
-                <ul class="pl-8 text-gray-400">
-                  <li><a href="#" class="block py-1">Tables</a></li>
-                  <li><a href="#" class="block py-1">Pro Tables</a></li>
+              <div class="translate transform overflow-hidden block" *ngIf="selected === 'Tables'">
+                <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Tables</a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pro
+                      Tables<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
                 </ul>
               </div>
             </li>
@@ -127,27 +157,267 @@
               <button mat-button (click)="toggleMenu('Pages')"
                 [ngClass]="{ 'active': selected === 'Pages', 'bg-[#333b48]': selected === 'Pages' }"
                 class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
-                  <mat-icon class="text-[20px]">pages</mat-icon>
-                 Pages
+                <mat-icon class="text-[20px]">pages</mat-icon>
+                Pages
                 <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
                   [ngClass]="{ 'rotate-180': selected === 'Pages' }">expand_more</mat-icon>
               </button>
-              <div class="m2-submenu" *ngIf="selected === 'Pages'">
-                <ul class="pl-8 text-gray-400">
-                  <li><a href="#" class="block py-1">Settings</a></li>
-                  <li><a href="#" class="block py-1">File ManagerPro</a></li>
-                  <li><a href="#" class="block py-1">Data TablesPro</a></li>
-                  <li><a href="#" class="block py-1">Pricing TablesPro</a></li>
-                  <li><a href="#" class="block py-1">Error PagePro</a></li>
-                  <li><a href="#" class="block py-1">Faq'sPro</a></li>
-                  <li><a href="#" class="block py-1">TeamsPro</a></li>
-                  <li><a href="#" class="block py-1">Terms & ConditionsPro</a></li>
-                  <li><a href="#" class="block py-1">Mail Success</a></li>
+              <div class="translate transform overflow-hidden block" *ngIf="selected === 'Pages'">
+                <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Settings</a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">File
+                      Manager <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Data
+                      Tables <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pricing
+                      Tables <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Error
+                      Page<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Faq's<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Teams<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Terms
+                      & Conditions <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Mail
+                      Success <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
                 </ul>
               </div>
             </li>
           </ul>
         </div>
+        <div>
+          <h3 class="mb-4 ml-4 text-sm font-medium text-bodydark2">SUPPORT</h3>
+          <ul class="mb-6 flex flex-col gap-1.5">
+            <li>
+              <button mat-button (click)="toggleMenu('Messages')"
+                [ngClass]="{ 'bg-[#333b48]': selected === 'Messages' }"
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                <div class="flex items-center">
+                  <mat-icon class="text-[20px]">message</mat-icon>
+                  Messages<span
+                    class="absolute right-14 top-1/2 -translate-y-1/2 rounded bg-primary px-2.5 py-1 text-xs font-medium text-white">5</span>
+                  <span
+                    class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span>
+                </div>
+              </button>
+            </li>
+
+            <li>
+              <button mat-button (click)="toggleMenu('Inbox')" [ngClass]="{ 'bg-[#333b48]': selected === 'Inbox' }"
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                <div class="flex items-center">
+                  <mat-icon class="text-[20px]">inbox</mat-icon>
+                  Inbox<span
+                    class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span>
+                </div>
+              </button>
+            </li>
+
+            <li>
+              <button mat-button (click)="toggleMenu('Invoice')" [ngClass]="{ 'bg-[#333b48]': selected === 'Invoice' }"
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                <div class="flex items-center">
+                  <mat-icon class="text-[20px]">receipt</mat-icon>
+                  Invoice<span
+                    class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span>
+                </div>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="mb-4 ml-4 text-sm font-medium text-bodydark2">OTHERS</h3>
+          <ul class="mb-6 flex flex-col gap-1.5">
+            <li>
+              <button mat-button (click)="toggleMenu('Charts')" [ngClass]="{ 'bg-[#333b48]': selected === 'Charts' }"
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                <mat-icon class="text-[20px]">show_chart</mat-icon>
+                Charts
+                <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
+                  [ngClass]="{ 'rotate-180': selected === 'Charts' }">expand_more</mat-icon>
+              </button>
+              <div class="translate transform overflow-hidden block" *ngIf="selected === 'Charts'">
+                <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Basic
+                      Chart</a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Advanced
+                      Chart<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <button mat-button (click)="toggleMenu('UI Elements')"
+                [ngClass]="{ 'bg-[#333b48]': selected === 'UI Elements' }"
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                <mat-icon class="text-[20px]">widgets</mat-icon>
+                UI Elements
+                <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
+                  [ngClass]="{ 'rotate-180': selected === 'UI Elements' }">expand_more</mat-icon>
+              </button>
+              <div class="translate transform overflow-hidden block" *ngIf="selected === 'UI Elements'">
+                <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Accordion
+                      <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">File
+                      Alerts</a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Data
+                      Avatars<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pricing
+                      Badge <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Error
+                      Breadcump<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Buttons</a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Buttons
+                      Group<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Cards<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Crousel<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">DropDowns<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Images<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">List<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Models<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Notifications<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pagination<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Popovers<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Progress<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Spinners<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Tabs<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Tooltips<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Videos<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+
+            <li>
+              <button mat-button (click)="toggleMenu('Authentication')"
+                [ngClass]="{ 'bg-[#333b48]': selected === 'Authentication' }"
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                  <mat-icon class="text-[20px]">lock</mat-icon>
+                  Authentication
+                  <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
+                    [ngClass]="{ 'rotate-180': selected === 'Authentication' }">expand_more</mat-icon>
+                </button>
+                <div class="translate transform overflow-hidden block" *ngIf="selected === 'Authentication'">
+                  <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
+                    <li><a href="#"
+                        class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Sign In</a>
+                    </li>
+                    <li><a href="#"
+                        class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Sign Up</a>
+                    </li>
+                    <li><a href="#"
+                        class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Reset Password<span
+                          class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                    </li>
+                    <li><a href="#"
+                        class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Coming Soon <span
+                          class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                    </li>
+                    <li><a href="#"
+                        class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">2 Step Verification<span
+                          class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                    </li>
+                    <li><a href="#"
+                        class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Under Maintenance<span
+                          class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+          </ul>
+        </div>
+
       </nav>
 
     </div>

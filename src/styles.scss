@@ -93,7 +93,7 @@ mat-toolbar {
 .dashboard-content,
 .app-header,
 .body-content
-mat-side {
+mat-sidenav {
   transition: background-color 0.01s ease, color 0.01s ease;
 }
 
@@ -121,4 +121,8 @@ mat-side {
 .bg-stroke {
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
+}
+
+.mat-drawer-inner-container::-webkit-scrollbar {
+  display: none;
 }
