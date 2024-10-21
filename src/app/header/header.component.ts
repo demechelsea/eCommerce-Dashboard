@@ -22,10 +22,12 @@ export class HeaderComponent {
   dropdownOpen: boolean = false;
   notifying: boolean = true;
 
-  toggleTheme(event: any) {
-    this.isDarkTheme = event.checked; // Toggle between light and dark theme
+  toggleTheme(event: Event) {
+    const inputElement = event.target as HTMLInputElement; 
+    this.isDarkTheme = inputElement.checked; 
     this.themeToggle.emit(this.isDarkTheme);
   }
+  
 
   toggleSidebar() {
     this.sidebarToggle.emit();
@@ -34,11 +36,10 @@ export class HeaderComponent {
   toggleDropdown(event: MouseEvent) {
     event.preventDefault();
     this.dropdownOpen = !this.dropdownOpen;
-    this.notifying = false; // Hide the notification badge when opened
+    this.notifying = false; 
   }
 
   closeDropdown(event: Event) {
-    // Close dropdown if clicked outside
     if (!(event.target as HTMLElement).closest('.relative')) {
       this.dropdownOpen = false;
     }

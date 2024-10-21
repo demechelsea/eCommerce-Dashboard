@@ -3,19 +3,19 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommonModule } from '@angular/common';
-import { MatIconModule } from '@angular/material/icon'; // Added for material theming
+import { MatIconModule } from '@angular/material/icon'; 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [HeaderComponent, SidebarComponent, DashboardComponent, CommonModule, MatIconModule] // Removed unnecessary imports
+  imports: [HeaderComponent, SidebarComponent, DashboardComponent, CommonModule, MatIconModule] 
 })
 export class AppComponent {
-  isDarkTheme: boolean = false; // Track the theme
-  isMobile: boolean = false; // Determine if the screen is mobile size
-  sidebarOpened: boolean = false; // Sidebar state
+  isDarkTheme: boolean = false; 
+  isMobile: boolean = false;
+  sidebarOpened: boolean = false; 
 
   constructor(private renderer: Renderer2) {}
 
@@ -29,16 +29,16 @@ export class AppComponent {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    this.isMobile = window.innerWidth <= 1025; // Check if the screen is mobile
-    this.sidebarOpened = !this.isMobile; // Open sidebar on larger screens
+    this.isMobile = window.innerWidth <= 1025; 
+    this.sidebarOpened = !this.isMobile; 
   }
 
   ngOnInit() {
-    this.onResize(); // Check screen size on component load
+    this.onResize(); 
   }
 
   toggleTheme(isDark: boolean) {
-    this.isDarkTheme = isDark; // Update the theme state
+    this.isDarkTheme = isDark; 
     if (this.isDarkTheme) {
       this.renderer.addClass(document.body, 'myapp-dark-theme');
       this.renderer.removeClass(document.body, 'myapp-light-theme');

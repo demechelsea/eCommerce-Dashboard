@@ -11,23 +11,23 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  @Input() opened: boolean = false; // Accept sidebar state as input
-  @Input() isMobile: boolean = false; // Accept mobile state as input
-  @Input() isDarkTheme: boolean = false; // Accept theme state as input
-  @Output() close = new EventEmitter<void>(); // Emit close event for sidebar
+  @Input() opened: boolean = false; 
+  @Input() isMobile: boolean = false; 
+  @Input() isDarkTheme: boolean = false; 
+  @Output() close = new EventEmitter<void>(); 
 
-  selected: string = ''; // Track selected menu item
+  selected: string = ''; 
 
   toggleSidebar() {
-    this.opened = !this.opened; // Toggle sidebar visibility
+    this.opened = !this.opened; 
   }
 
   closeSidebar() {
-    this.opened = false; // Close the sidebar
-    this.close.emit(); // Emit the close event
+    this.opened = false; 
+    this.close.emit(); 
   }
 
   toggleMenu(selectedMenu: string) {
-    this.selected = this.selected === selectedMenu ? '' : selectedMenu; // Toggle menu selection
+    this.selected = this.selected === selectedMenu ? '' : selectedMenu; 
   }
 }

@@ -8,5 +8,5 @@ import { CommonModule } from '@angular/common';
   templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent {
-  @Input() isDarkTheme: boolean = false; // Accept the dark theme input
+  @Input() isDarkTheme: boolean = false; 
 }

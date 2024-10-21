@@ -1,17 +1,14 @@
 @use '@angular/material' as mat;
 
-// Import Tailwind CSS
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-// Define light theme colors
 $myapp-light-primary: mat.m2-define-palette(mat.$m2-indigo-palette);
 $myapp-light-accent: mat.m2-define-palette(mat.$m2-pink-palette, A200, A100, A400);
 $myapp-light-warn: mat.m2-define-palette(mat.$m2-red-palette);
-$sidebar-dark-bg: #243040; // Dark theme background
-$sidebar-light-bg: #1c2333; // Light theme background
-// Define the light theme
+$sidebar-dark-bg: #243040; 
+$sidebar-light-bg: #1c2333; 
 $myapp-light-theme: mat.m2-define-light-theme((
   color: (
     primary: $myapp-light-primary,
@@ -20,11 +17,30 @@ $myapp-light-theme: mat.m2-define-light-theme((
   ),
 ));
 
-// Define dark theme colors
-$myapp-dark-primary: mat.m2-define-palette(mat.$m2-blue-palette); // Change to blue palette
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  -webkit-font-feature-settings: inherit;
+          font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0; 
+  padding: 0; 
+}
+
+.fill-body{
+  fill: #64748B;
+}
+
+$myapp-dark-primary: mat.m2-define-palette(mat.$m2-blue-palette); 
 $myapp-dark-accent: mat.m2-define-palette(mat.$m2-amber-palette, A200, A100, A400);
 
-// Define the dark theme
 $myapp-dark-theme: mat.m2-define-dark-theme((
   color: (
     primary: $myapp-dark-primary,
@@ -33,18 +49,15 @@ $myapp-dark-theme: mat.m2-define-dark-theme((
 ));
 
 
-// Apply core theme styles once
 @include mat.core-theme($myapp-light-theme);
 @include mat.core-theme($myapp-dark-theme);
 
 
-// Set the height of the toolbar
 mat-toolbar {
   height: 80px !important;
   background-color: mat.m2-get-color-from-palette($myapp-light-primary);
 }
 
-// Remove padding from mat-toolbar
 .no-padding {
   padding-left: 0 !important;
   padding-right: 0 !important;
@@ -52,44 +65,43 @@ mat-toolbar {
 
 .myapp-light-theme mat-sidenav,
 .myapp-dark-theme mat-sidenav {
-  border-radius: 0 !important; // Remove rounded corners
+  border-radius: 0 !important; 
 }
 
 
 
 .myapp-light-theme .dashboard-content
  {
-  background-color: #ffffff; // Light background
-  color: black; // Light text color
+  background-color: #ffffff; 
+  color: black; 
 }
 
 .myapp-light-theme mat-sidenav{
-  background-color: #1c2333; // Dark background
-  color: #DEEFEE; // Dark text color
+  background-color: #1c2333; 
+  color: #DEEFEE;
 }
 
 .myapp-dark-theme mat-sidenav {
-  background-color: #243040; // Dark background
-  color: #DEEFEE; // Dark text color
+  background-color: #243040; 
+  color: #DEEFEE; 
 }
 
 .myapp-dark-theme .dashboard-content,
 .myapp-dark-theme .app-header {
-  background-color: #243040; // Dark background
-  color: white; // Dark text color
+  background-color: #243040; 
+  color: white; 
 }
 
 .myapp-light-theme .body-content {
-  background-color: #f1f4f9; // Dark background
-  color: black; // Dark text color
+  background-color: #f1f4f9; 
+  color: black; 
 }
 
 .myapp-dark-theme .body-content {
-  background-color: #1a232c; // Dark background
-  color: white; // Dark text color
+  background-color: #1a232c; 
+  color: white; 
 }
 
-// Smooth transition for theme changes
 .dashboard-content,
 .app-header,
 .body-content
@@ -97,7 +109,6 @@ mat-sidenav {
   transition: background-color 0.01s ease, color 0.01s ease;
 }
 
-// Custom styles for theme toggle
 .theme-toggle {
   .mat-slide-toggle-thumb {
     background-color: mat.m2-get-color-from-palette($myapp-light-primary, 500);
@@ -108,9 +119,8 @@ mat-sidenav {
   }
 }
 
-// Custom utility class for bottom shadow
 .shadow-bottom {
-  box-shadow: 0 4px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0px 8px 0px rgba(0, 0, 0, 0.1);
 }
 
 .bg-primary {
@@ -123,6 +133,29 @@ mat-sidenav {
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
 }
 
+.bg-gray {
+  --tw-bg-opacity: 1;
+  background-color: #2b4049;
+}
+.border-stroke {
+  --tw-border-opacity: 1;
+  border-color: rgb(226 232 240 / var(--tw-border-opacity));
+}
+
+.rounded-full{
+  border-radius: 9999px;
+}
+
 .mat-drawer-inner-container::-webkit-scrollbar {
   display: none;
+}
+
+.myapp-light-theme .bg-gray {
+  background-color: rgb(239, 244, 251);
+}
+
+
+.border-strokedark {
+  --tw-border-opacity: 1;
+  border-color: #2b4049;
 }
