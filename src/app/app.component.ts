@@ -4,13 +4,14 @@ import { HeaderComponent } from './header/header.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon'; 
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [HeaderComponent, SidebarComponent, DashboardComponent, CommonModule, MatIconModule] 
+  imports: [HeaderComponent, SidebarComponent, DashboardComponent, CommonModule, MatIconModule,RouterOutlet] 
 })
 export class AppComponent {
   isDarkTheme: boolean = false; 

@@ -1,3 +1,5 @@
+
+
 <mat-sidenav-container class="mat-drawer-inner-container"
   [ngClass]="isDarkTheme ? 'myapp-dark-theme' : 'myapp-light-theme'">
   <mat-sidenav mode="side" [opened]="opened" style="width: 290px">
@@ -20,10 +22,9 @@
               <button mat-button (click)="toggleMenu('Dashboard')"
                 [ngClass]="{ 'active': selected === 'Dashboard', 'bg-[#333b48]': selected === 'Dashboard' }"
                 class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
-                <mat-icon class="fill-current">dashboard</mat-icon>
-                Dashboard
-                <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
-                  [ngClass]="{ 'rotate-180': selected === 'Dashboard' }">expand_more</mat-icon>
+              <mat-icon> dashboard </mat-icon>
+                 Dashboard 
+                 
               </button>
               <div class="translate transform overflow-hidden block" *ngIf="selected === 'Dashboard'">
                 <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
@@ -284,94 +285,99 @@
                   [ngClass]="{ 'rotate-180': selected === 'UI Elements' }">expand_more</mat-icon>
               </button>
               <div class="translate transform overflow-hidden block" *ngIf="selected === 'UI Elements'">
-                <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Accordion
-                      <span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                <ul class="mb-3 mt-4 flex flex-col gap-2 pl-6">
+                  <li> <span class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="accordion()"
+                    class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white !text-white">
+                   
+                    Accordion 
+                  
+                     </button> 
+
+
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">File
-                      Alerts</a>
+                  <li><button (click)="alerts()" 
+                    class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">File
+                      Alerts</button>
+
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="avatars()"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Data
-                      Avatars<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Avatars</button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="badge()"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pricing
-                      Badge <span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Badge </button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="breadcump()" 
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Error
-                      Breadcump<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Breadcump</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Buttons</a>
+                  <li><button  (click)="buttons()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Buttons</button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="groupButtons()"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Buttons
-                      Group<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Group</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Cards<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Cards</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Crousel<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="carousel()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Crousel</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">DropDowns<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="dropdowns()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">DropDowns</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Images<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="images()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Images</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">List<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="list()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">List</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Models<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="modals()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Models</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Notifications<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="notifications()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Notifications</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pagination<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="pagination()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pagination</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Popovers<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="popovers()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Popovers</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Progress<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="progress()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Progress</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Spinners<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="spinners()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Spinners</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Tabs<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="tabs()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Tabs</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Tooltips<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="tooltips()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Tooltips</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Videos<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="videos()"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Videos</button>
                   </li>
                 </ul>
               </div>
@@ -381,38 +387,44 @@
               <button mat-button (click)="toggleMenu('Authentication')"
                 [ngClass]="{ 'bg-[#333b48]': selected === 'Authentication' }"
                 class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
-                  <mat-icon class="text-[20px]">lock</mat-icon>
-                  Authentication
-                  <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
-                    [ngClass]="{ 'rotate-180': selected === 'Authentication' }">expand_more</mat-icon>
-                </button>
-                <div class="translate transform overflow-hidden block" *ngIf="selected === 'Authentication'">
-                  <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
-                    <li><a href="#"
-                        class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Sign In</a>
-                    </li>
-                    <li><a href="#"
-                        class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Sign Up</a>
-                    </li>
-                    <li><a href="#"
-                        class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Reset Password<span
-                          class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
-                    </li>
-                    <li><a href="#"
-                        class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Coming Soon <span
-                          class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
-                    </li>
-                    <li><a href="#"
-                        class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">2 Step Verification<span
-                          class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
-                    </li>
-                    <li><a href="#"
-                        class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Under Maintenance<span
-                          class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
+                <mat-icon class="text-[20px]">lock</mat-icon>
+                Authentication
+                <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
+                  [ngClass]="{ 'rotate-180': selected === 'Authentication' }">expand_more</mat-icon>
+              </button>
+              <div class="translate transform overflow-hidden block" *ngIf="selected === 'Authentication'">
+                <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Sign
+                      In</a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Sign
+                      Up</a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Reset
+                      Password<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Coming
+                      Soon <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">2
+                      Step Verification<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                  <li><a href="#"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Under
+                      Maintenance<span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  </li>
+                </ul>
+              </div>
+            </li>
           </ul>
         </div>
 
