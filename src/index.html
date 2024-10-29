@@ -25,10 +25,11 @@
 
 
 <body
-  x-data="{ page: 'accordion', loaded: true, darkMode: JSON.parse(localStorage.getItem('darkMode')) || false, stickyMenu: false, sidebarToggle: false, scrollTop: false }"
+  x-data="{ page: 'alerts', 'loaded': true, 'darkMode': true, 'stickyMenu': false, 'sidebarToggle': false, 'scrollTop': false }"
   x-init="
-          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))
-          " :class="{ 'dark text-bodydark bg-boxdark-2': darkMode }">
+          darkMode = JSON.parse(localStorage.getItem('darkMode'));
+          $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
+  :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}" >
 
   <!-- ===== Preloader Start ===== -->
 

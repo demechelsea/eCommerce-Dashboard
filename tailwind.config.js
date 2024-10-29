@@ -1,5 +1,4 @@
-module.exports = {
-  darkMode: 'class', 
+module.exports = { 
   content: [
     "./src/**/*.{html,ts}",
   ],
@@ -10,4 +9,18 @@ module.exports = {
       },
     },
   },
+  plugins: [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.no-scrollbar': {
+          'overflow-y': 'auto',
+          '-ms-overflow-style': 'none',  // IE and Edge
+          'scrollbar-width': 'none',     // Firefox
+        },
+        '.no-scrollbar::-webkit-scrollbar': {
+          display: 'none',               // Chrome, Safari, and Edge
+        },
+      });
+    },
+  ],
 };
