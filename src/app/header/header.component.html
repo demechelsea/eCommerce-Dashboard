@@ -1,6 +1,5 @@
-<mat-toolbar class="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
-  <div class="flex flex-grow items-center justify-between px-4 py-4 md:px-6 2xl:px-11"
-    [ngClass]="{ 'shadow-bottom': !isDarkTheme }">
+  <div class="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11"
+    [ngClass]="{ 'shadow-bottom': !isDarkTheme }" >
 
     <div class="flex items-center gap-2 sm:gap-4 lg:hidden">
       <button
@@ -26,7 +25,7 @@
           </button>
 
           <input type="text" placeholder="Type to search..."
-            class="w-full bg-transparent pl-4 pr-4 focus:outline-none xl:w-[calc(500px-40px)] text-base">
+            class="w-full bg-transparent pl-9 pr-4 focus:outline-none xl:w-125">
         </div>
       </form>
     </div>
@@ -146,4 +145,3 @@
       </div>
     </div>
   </div>
-</mat-toolbar>

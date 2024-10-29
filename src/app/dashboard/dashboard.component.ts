@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, AccordionComponent,RouterModule,MatSidenavModule, MatIconModule],
+  imports: [CommonModule, AccordionComponent, RouterModule, MatSidenavModule, MatIconModule],
   templateUrl: './dashboard.component.html',
 })
 export class DashboardComponent {
