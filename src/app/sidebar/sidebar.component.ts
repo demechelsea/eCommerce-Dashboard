@@ -18,6 +18,9 @@ export class SidebarComponent {
   @Output() close = new EventEmitter<void>();
   constructor(private router: Router) { }
   selected: string = '';
+  isSubmenuOpen: boolean = false;
+  
+
 
   toggleSidebar() {
     this.opened = !this.opened;
@@ -30,6 +33,8 @@ export class SidebarComponent {
 
   toggleMenu(selectedMenu: string) {
     this.selected = this.selected === selectedMenu ? '' : selectedMenu;
+    this.isSubmenuOpen = !this.isSubmenuOpen; // Toggle submenu state
+
   }
 
 
