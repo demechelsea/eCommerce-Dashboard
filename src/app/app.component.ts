@@ -41,11 +41,11 @@ export class AppComponent {
   toggleTheme(isDark: boolean) {
     this.isDarkTheme = isDark; 
     if (this.isDarkTheme) {
-      this.renderer.addClass(document.body, 'myapp-dark-theme');
-      this.renderer.removeClass(document.body, 'myapp-light-theme');
+      this.renderer.addClass(document.body, 'dark');
+      this.renderer.removeClass(document.body, 'light');
     } else {
-      this.renderer.addClass(document.body, 'myapp-light-theme');
-      this.renderer.removeClass(document.body, 'myapp-dark-theme');
+      this.renderer.addClass(document.body, 'light');
+      this.renderer.removeClass(document.body, 'dark');
     }
   }
 }

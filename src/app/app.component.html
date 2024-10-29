@@ -1,7 +1,7 @@
 <div class="flex h-screen overflow-hidden">
   <app-sidebar [opened]="sidebarOpened" [isMobile]="isMobile" [isDarkTheme]="isDarkTheme" (close)="closeSidebar()"></app-sidebar>
 
-  <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden" [ngClass]="isDarkTheme ? 'myapp-dark-theme' : 'myapp-light-theme'">
+  <div class="relative flex flex-1 flex-col overflow-y-auto overflow-x-hidden" [ngClass]="isDarkTheme ? 'dark' : 'light'">
     <app-header 
       (themeToggle)="toggleTheme($event)" 
       [isMobile]="isMobile" 
@@ -13,5 +13,6 @@
     <div class="content flex-grow p-10 body-content">
       <app-dashboard [isDarkTheme]="isDarkTheme"></app-dashboard>
     </div>
+
   </div>
 </div>
