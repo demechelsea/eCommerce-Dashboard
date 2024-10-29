@@ -7,7 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accordion | TailAdmin - Tailwind CSS Admin Dashboard Template</title>
   <link rel="icon" href="favicon.ico">
-  <link href="style.css" rel="stylesheet">
   <script defer="" referrerpolicy="origin"
     src="/cdn-cgi/zaraz/</script>s.js?z=JTdCJTIyZXhlY3V0ZWQlMjIlM0ElNUIlNUQlMkMlMjJ0JTIyJTNBJTIyQWNjb3JkaW9uJTIwJTdDJTIwVGFpbEFkbWluJTIwLSUyMFRhaWx3aW5kJTIwQ1NTJTIwQWRtaW4lMjBEYXNoYm9hcmQlMjBUZW1wbGF0ZSUyMiUyQyUyMnglMjIlM0EwLjAyNDM5MTI0ODUyMDMwMTcyMyUyQyUyMnclMjIlM0ExNDQwJTJDJTIyaCUyMiUzQTk2MCUyQyUyMmolMjIlM0E4MjglMkMlMjJlJTIyJTNBMTA0NyUyQyUyMmwlMjIlM0ElMjJodHRwcyUzQSUyRiUyRmRlbW8udGFpbGFkbWluLmNvbSUyRmFjY29yZGlvbiUyMiUyQyUyMnIlMjIlM0ElMjJodHRwcyUzQSUyRiUyRmRlbW8udGFpbGFkbWluLmNvbSUyRmF2YXRhcnMlMjIlMkMlMjJrJTIyJTNBMjQlMkMlMjJuJTIyJTNBJTIyVVRGLTglMjIlMkMlMjJvJTIyJTNBLTE4MCUyQyUyMnElMjIlM0ElNUIlNUQlN0Q="></script>
   <script nonce="cd3aa20a-044d-48c3-86f6-0fc276e58520">
@@ -31,24 +30,18 @@
           $watch('darkMode', value => localStorage.setItem('darkMode', JSON.stringify(value)))"
   :class="{'dark text-bodydark bg-boxdark-2': darkMode === true}" class="dark text-bodydark bg-boxdark-2">
   <!-- ===== Preloader Start ===== -->
+
+
   <div x-show="loaded"
     x-init="window.addEventListener('DOMContentLoaded', () => {setTimeout(() => loaded = false, 500)})"
     class="fixed left-0 top-0 z-999999 flex h-screen w-screen items-center justify-center bg-white dark:bg-black"
-    style="display: none;">
-    <div class="flex h-screen overflow-hidden">
+    style="display: none;"></div>
 
-
-
-    </div>
-  </div>
+    <app-root class="flex h-screen overflow-hidden"></app-root>
 
   <!-- ===== Preloader End ===== -->
 
-  <app-root></app-root>
 
-  </div>
-  <!-- ===== Content Area End ===== -->
-  </div>
   <!-- ===== Page Wrapper End ===== -->
   <script defer="" src="bundle.js"></script>
   <script defer=""

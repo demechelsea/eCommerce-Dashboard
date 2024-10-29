@@ -35,7 +35,7 @@
 
       <ul class="flex items-center gap-2 2xsm:gap-4">
         <li>
-          <label [ngClass]="isDarkTheme ? 'bg-primary' : 'bg-stroke'" class="relative m-0 block h-8 w-14 rounded-full">
+          <label :class="darkMode ? 'bg-primary' : 'bg-stroke'" [ngClass]="isDarkTheme ? 'bg-primary' : 'bg-stroke'" class="relative m-0 block h-8 w-14 rounded-full">
             <input type="checkbox" [checked]="isDarkTheme" (change)="toggleTheme($event)"
               class="absolute top-0 z-50 m-0 h-full w-full cursor-pointer opacity-0">
             <span [ngClass]="isDarkTheme ? '!right-1 !translate-x-full' : ''"
@@ -135,16 +135,13 @@
       <div class="relative">
         <div class="flex items-center gap-4">
           <span class="hidden text-right lg:block">
-            <span class="block text-sm font-medium"
-              [ngClass]="{ 'text-black': !isDarkTheme, 'text-white': isDarkTheme }">
-              Thomas Anree
-            </span>
-            <span class="block text-xs font-medium">UX Designer</span>
+            <span class="block text-sm font-medium text-black dark:text-white">Thomas Anree</span>
+            <span class="block text-xs font-medium text-black dark:text-white">UX Designer</span>
           </span>
           <span class="h-12 w-12 rounded-full">
             <img src="./assets/images/user.png" alt="Profile Image">
           </span>
-          <mat-icon class="expand-icon text-[20px]">expand_more</mat-icon>
+          <mat-icon class="expand-icon text-[20px] text-black dark:text-white">expand_more</mat-icon>
         </div>
       </div>
     </div>
