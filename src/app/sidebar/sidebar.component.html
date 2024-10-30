@@ -17,35 +17,35 @@
             <li>
               <button mat-button (click)="toggleMenu('Dashboard')"
                 [ngClass]="{ 'active': selected === 'Dashboard', 'bg-[#333b48]': selected === 'Dashboard' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
               <mat-icon> dashboard </mat-icon>
                  Dashboard 
                  
               </button>
               <div class="translate transform overflow-hidden block" *ngIf="selected === 'Dashboard'">
                 <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
-                  <li><a
+                  <li><button (click)="toggleSubMenu('eCommerce')"   [ngClass]="{ 'active': subMenuSelected === 'eCommerce', 'text-white': subMenuSelected === 'eCommerce' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white"
-                      href="#">eCommerce</a>
+                      href="#">eCommerce</button>
                   </li>
-                  <li><a href="#"
+                  <li> <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('Analytics')"   [ngClass]="{ 'active': subMenuSelected === 'Analytics', 'text-white': subMenuSelected === 'Analytics' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Analytics
-                      <span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                     </button>
                   </li>
-                  <li><a href="#"
+                  <li>   <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('Marketing')"   [ngClass]="{ 'active': subMenuSelected === 'Marketing', 'text-white': subMenuSelected === 'Marketing' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Marketing
-                      <span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                   </button>
                   </li>
-                  <li><a href="#"
+                  <li>  <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('CRM')"   [ngClass]="{ 'active': subMenuSelected === 'CRM', 'text-white': subMenuSelected === 'CRM' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">CRM
-                      <span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                    </button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Stocks<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('Stocks')"   [ngClass]="{ 'active': subMenuSelected === 'Stocks', 'text-white': subMenuSelected === 'Stocks' }"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Stocks</button>
                   </li>
                 </ul>
               </div>
@@ -54,7 +54,7 @@
             <li>
               <button mat-button (click)="toggleMenu('Calendar')"
                 [ngClass]="{ 'bg-[#333b48]': selected === 'Calendar' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
                 <div class="flex items-center">
                   <mat-icon class="text-[20px]">calendar_today</mat-icon>
                   <span class="ml-1">Calendar</span>
@@ -64,7 +64,7 @@
 
             <li>
               <button mat-button (click)="toggleMenu('Profile')" [ngClass]="{ 'bg-[#333b48]': selected === 'Profile' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
                 <div class="flex items-center">
                   <mat-icon class="text-[20px]">person</mat-icon>
                   <span class="ml-1">Profile</span>
@@ -75,7 +75,7 @@
             <li>
               <button mat-button (click)="toggleMenu('Task')"
                 [ngClass]="{ 'active': selected === 'Task', 'bg-[#333b48]': selected === 'Task' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
                 <mat-icon class="text-[20px]">task</mat-icon>
                 Task
                 <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
@@ -83,14 +83,14 @@
               </button>
               <div class="translate transform overflow-hidden block" *ngIf="selected === 'Task'">
                 <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
-                  <li><a href="#"
+                  <li> <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('List')"   [ngClass]="{ 'active': subMenuSelected === 'List', 'text-white': subMenuSelected === 'List' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">List
-                      <span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                     </button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Kanban<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('Kanban')"   [ngClass]="{ 'active': subMenuSelected === 'Kanban', 'text-white': subMenuSelected === 'Kanban' }"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Kanban</button>
                   </li>
                 </ul>
               </div>
@@ -99,7 +99,7 @@
             <li>
               <button mat-button (click)="toggleMenu('Forms')"
                 [ngClass]="{ 'active': selected === 'Forms', 'bg-[#333b48]': selected === 'Forms' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
                 <mat-icon class="text-[20px]">assignment</mat-icon>
                 Forms
                 <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
@@ -107,20 +107,20 @@
               </button>
               <div class="translate transform overflow-hidden block" *ngIf="selected === 'Forms'">
                 <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
-                  <li><a href="#"
+                  <li><button (click)="toggleSubMenu('FormElements')"   [ngClass]="{ 'active': subMenuSelected === 'FormElements', 'text-white': subMenuSelected === 'FormElements' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Form
-                      Elements</a></li>
-                  <li><a href="#"
+                      Elements</button></li>
+                  <li><span
+                    class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('ProFormElements')"   [ngClass]="{ 'active': subMenuSelected === 'ProFormElements', 'text-white': subMenuSelected === 'ProFormElements' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pro
-                      Form Elements<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
-                  <li><a href="#"
+                      Form Elements</button>
+                  <li><button (click)="toggleSubMenu('FormLayout')"   [ngClass]="{ 'active': subMenuSelected === 'FormLayout', 'text-white': subMenuSelected === 'FormLayout' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Form
-                      Layout</a></li>
-                  <li><a href="#"
+                      Layout</button></li>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('ProFormLayout')"   [ngClass]="{ 'active': subMenuSelected === 'ProFormLayout', 'text-white': subMenuSelected === 'ProFormLayout' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pro
-                      Form Layout<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Form Layout</button>
                 </ul>
               </div>
             </li>
@@ -128,7 +128,7 @@
             <li>
               <button mat-button (click)="toggleMenu('Tables')"
                 [ngClass]="{ 'active': selected === 'Tables', 'bg-[#333b48]': selected === 'Tables' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
                 <mat-icon class="text-[20px]">table_chart</mat-icon>
                 Tables
                 <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
@@ -136,13 +136,13 @@
               </button>
               <div class="translate transform overflow-hidden block" *ngIf="selected === 'Tables'">
                 <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Tables</a>
+                  <li><button (click)="toggleSubMenu('Tables')"   [ngClass]="{ 'active': subMenuSelected === 'Tables', 'text-white': subMenuSelected === 'Tables' }"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Tables</button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('ProTables')"   [ngClass]="{ 'active': subMenuSelected === 'ProTables', 'text-white': subMenuSelected === 'ProTables' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pro
-                      Tables<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Tables</button>
                   </li>
                 </ul>
               </div>
@@ -151,7 +151,7 @@
             <li>
               <button mat-button (click)="toggleMenu('Pages')"
                 [ngClass]="{ 'active': selected === 'Pages', 'bg-[#333b48]': selected === 'Pages' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
                 <mat-icon class="text-[20px]">pages</mat-icon>
                 Pages
                 <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
@@ -159,46 +159,46 @@
               </button>
               <div class="translate transform overflow-hidden block" *ngIf="selected === 'Pages'">
                 <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Settings</a>
+                  <li><button (click)="toggleSubMenu('Settings')"   [ngClass]="{ 'active': subMenuSelected === 'Settings', 'text-white': subMenuSelected === 'Settings' }"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Settings</button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('File')"   [ngClass]="{ 'active': subMenuSelected === 'File', 'text-white': subMenuSelected === 'File' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">File
-                      Manager <span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Manager </button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('Data')"   [ngClass]="{ 'active': subMenuSelected === 'Data', 'text-white': subMenuSelected === 'Data' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Data
-                      Tables <span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Tables </button>
                   </li>
-                  <li><a href="#"
+                  <li> <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('Pricing')"   [ngClass]="{ 'active': subMenuSelected === 'Pricing', 'text-white': subMenuSelected === 'Pricing' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pricing
-                      Tables <span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Tables</button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('Error')"   [ngClass]="{ 'active': subMenuSelected === 'Error', 'text-white': subMenuSelected === 'Error' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Error
-                      Page<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Page</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Faq's<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('Faq')"   [ngClass]="{ 'active': subMenuSelected === 'Faq', 'text-white': subMenuSelected === 'Faq' }"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Faq's</button>
                   </li>
-                  <li><a href="#"
-                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Teams<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('Teams')"   [ngClass]="{ 'active': subMenuSelected === 'Teams', 'text-white': subMenuSelected === 'Teams' }"
+                      class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Teams</button>
                   </li>
-                  <li><a href="#"
+                  <li> <span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('Terms')"   [ngClass]="{ 'active': subMenuSelected === 'Terms', 'text-white': subMenuSelected === 'Terms' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Terms
-                      & Conditions <span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      & Conditions</button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('Mail')"   [ngClass]="{ 'active': subMenuSelected === 'Mail', 'text-white': subMenuSelected === 'Mail' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Mail
-                      Success <span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Success </button>
                   </li>
                 </ul>
               </div>
@@ -211,7 +211,7 @@
             <li>
               <button mat-button (click)="toggleMenu('Messages')"
                 [ngClass]="{ 'bg-[#333b48]': selected === 'Messages' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
                 <div class="flex items-center">
                   <mat-icon class="text-[20px]">message</mat-icon>
                   Messages<span
@@ -224,7 +224,7 @@
 
             <li>
               <button mat-button (click)="toggleMenu('Inbox')" [ngClass]="{ 'bg-[#333b48]': selected === 'Inbox' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
                 <div class="flex items-center">
                   <mat-icon class="text-[20px]">inbox</mat-icon>
                   Inbox<span
@@ -235,7 +235,7 @@
 
             <li>
               <button mat-button (click)="toggleMenu('Invoice')" [ngClass]="{ 'bg-[#333b48]': selected === 'Invoice' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
                 <div class="flex items-center">
                   <mat-icon class="text-[20px]">receipt</mat-icon>
                   Invoice<span
@@ -250,7 +250,7 @@
           <ul class="mb-6 flex flex-col gap-1.5">
             <li>
               <button mat-button (click)="toggleMenu('Charts')" [ngClass]="{ 'bg-[#333b48]': selected === 'Charts' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
                 <mat-icon class="text-[20px]">show_chart</mat-icon>
                 Charts
                 <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
@@ -258,14 +258,14 @@
               </button>
               <div class="translate transform overflow-hidden block" *ngIf="selected === 'Charts'">
                 <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
-                  <li><a href="#"
+                  <li><button (click)="toggleSubMenu('BasicChart')"   [ngClass]="{ 'active': subMenuSelected === 'BasicChart', 'text-white': subMenuSelected === 'BasicChart' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Basic
-                      Chart</a>
+                      Chart</button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('AdvancedChart')"   [ngClass]="{ 'active': subMenuSelected === 'AdvancedChart', 'text-white': subMenuSelected === 'AdvancedChart' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Advanced
-                      Chart<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Chart</button>
                   </li>
                 </ul>
               </div>
@@ -274,7 +274,7 @@
             <li>
               <button mat-button (click)="toggleMenu('UI Elements')"
                 [ngClass]="{ 'bg-[#333b48]': selected === 'UI Elements' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
                 <mat-icon class="text-[20px]">widgets</mat-icon>
                 UI Elements
                 <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
@@ -283,7 +283,7 @@
               <div class="translate transform overflow-hidden block" *ngIf="selected === 'UI Elements'">
                 <ul class="mb-3 mt-4 flex flex-col gap-2 pl-6">
                   <li> <span class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="accordion()"
-                    class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white !text-white">
+                    class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ">
                    
                     Accordion 
                   
@@ -382,7 +382,7 @@
             <li>
               <button mat-button (click)="toggleMenu('Authentication')"
                 [ngClass]="{ 'bg-[#333b48]': selected === 'Authentication' }"
-                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4 bg-graydark dark:bg-meta-4">
+                class="group relative flex items-center gap-2.5 w-[242px] h-[40px] rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-graydark dark:hover:bg-meta-4">
                 <mat-icon class="text-[20px]">lock</mat-icon>
                 Authentication
                 <mat-icon class="absolute right-4 top-1/2 -translate-y-1/2 fill-current rotate-180"
@@ -390,33 +390,33 @@
               </button>
               <div class="translate transform overflow-hidden block" *ngIf="selected === 'Authentication'">
                 <ul class="mb-5 mt-4 flex flex-col gap-2.5 pl-6">
-                  <li><a href="#"
+                  <li><button (click)="toggleSubMenu('SignIn')"   [ngClass]="{ 'active': subMenuSelected === 'SignIn', 'text-white': subMenuSelected === 'SignIn' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Sign
-                      In</a>
+                      In</button>
                   </li>
-                  <li><a href="#"
+                  <li><button (click)="toggleSubMenu('SignUp')"   [ngClass]="{ 'active': subMenuSelected === 'SignUp', 'text-white': subMenuSelected === 'SignUp' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Sign
-                      Up</a>
+                      Up</button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('ResetPassword')"   [ngClass]="{ 'active': subMenuSelected === 'ResetPassword', 'text-white': subMenuSelected === 'ResetPassword' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Reset
-                      Password<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Password</button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('ComingSoon')"   [ngClass]="{ 'active': subMenuSelected === 'ComingSoon', 'text-white': subMenuSelected === 'ComingSoon' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Coming
-                      Soon <span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Soon </button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('TwoStepVerification')"   [ngClass]="{ 'active': subMenuSelected === 'TwoStepVerification', 'text-white': subMenuSelected === 'TwoStepVerification' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">2
-                      Step Verification<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Step Verification</button>
                   </li>
-                  <li><a href="#"
+                  <li><span
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="toggleSubMenu('UnderMaintenance')"   [ngClass]="{ 'active': subMenuSelected === 'UnderMaintenance', 'text-white': subMenuSelected === 'UnderMaintenance' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Under
-                      Maintenance<span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span></a>
+                      Maintenance</button>
                   </li>
                 </ul>
               </div>
