@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './images.component.scss'
 })
 export class ImagesComponent {
-
+// theme problem  
 }
