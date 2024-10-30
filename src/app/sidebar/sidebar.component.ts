@@ -19,9 +19,7 @@ export class SidebarComponent {
   constructor(private router: Router) { }
   selected: string = '';
   isSubmenuOpen: boolean = false;
-  
-
-
+  subMenuSelected:string = '';
   toggleSidebar() {
     this.opened = !this.opened;
   }
@@ -37,14 +35,20 @@ export class SidebarComponent {
 
   }
 
+  toggleSubMenu(selectedSubMenu: string) {
 
+    this.subMenuSelected = selectedSubMenu;
+    console.log(selectedSubMenu)
+     
+
+  }
   accordion() {
 
     this.router.navigate(['/accordion'])
   }
   alerts() {
 // this.toggleMenu("alert")
-    this.router.navigate(['/alerts'])
+    this.router.navigate(['/alerts']);
   }
   avatars() {
 
