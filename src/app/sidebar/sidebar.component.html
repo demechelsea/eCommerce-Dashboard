@@ -282,7 +282,7 @@
               </button>
               <div class="translate transform overflow-hidden block" *ngIf="selected === 'UI Elements'">
                 <ul class="mb-3 mt-4 flex flex-col gap-2 pl-6">
-                  <li> <span class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="accordion()"
+                  <li> <span class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="accordion()" [ngClass]="{ 'active': subMenuSelected === 'accordion', 'text-white': subMenuSelected === 'accordion' }"
                     class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white ">
                    
                     Accordion 
@@ -291,88 +291,88 @@
 
 
                   </li>
-                  <li><button (click)="alerts()" 
+                  <li><button (click)="alerts()"   [ngClass]="{ 'active': subMenuSelected === 'alerts', 'text-white': subMenuSelected === 'alerts' }"
                     class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">File
                       Alerts</button>
 
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="avatars()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="avatars()" [ngClass]="{ 'active': subMenuSelected === 'avatars', 'text-white': subMenuSelected === 'avatars' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Data
                       Avatars</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="badge()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="badge()" [ngClass]="{ 'active': subMenuSelected === 'pricing', 'text-white': subMenuSelected === 'pricing' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pricing
                       Badge </button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="breadcump()" 
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="breadcump()" [ngClass]="{ 'active': subMenuSelected === 'breadcrumb', 'text-white': subMenuSelected === 'breadcrumb' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Error
                       Breadcump</button>
                   </li>
-                  <li><button  (click)="buttons()"
+                  <li><button  (click)="buttons()" [ngClass]="{ 'active': subMenuSelected === 'buttons', 'text-white': subMenuSelected === 'buttons' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Buttons</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="groupButtons()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="groupButtons()" [ngClass]="{ 'active': subMenuSelected === 'buttons-group', 'text-white': subMenuSelected === 'buttons-group' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Buttons
                       Group</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="cards()" [ngClass]="{ 'active': subMenuSelected === 'cards', 'text-white': subMenuSelected === 'cards' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Cards</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="carousel()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="carousel()" [ngClass]="{ 'active': subMenuSelected === 'carousel', 'text-white': subMenuSelected === 'carousel' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Crousel</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="dropdowns()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="dropdowns()" [ngClass]="{ 'active': subMenuSelected === 'dropdowns', 'text-white': subMenuSelected === 'dropdowns' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">DropDowns</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="images()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="images()" [ngClass]="{ 'active': subMenuSelected === 'images', 'text-white': subMenuSelected === 'images' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Images</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="list()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="list()" [ngClass]="{ 'active': subMenuSelected === 'list', 'text-white': subMenuSelected === 'list' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">List</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="modals()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="modals()" [ngClass]="{ 'active': subMenuSelected === 'modals', 'text-white': subMenuSelected === 'modals' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Models</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="notifications()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="notifications()" [ngClass]="{ 'active': subMenuSelected === 'notifications', 'text-white': subMenuSelected === 'notifications' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Notifications</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="pagination()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="pagination()" [ngClass]="{ 'active': subMenuSelected === 'pagination', 'text-white': subMenuSelected === 'pagination' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Pagination</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="popovers()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="popovers()" [ngClass]="{ 'active': subMenuSelected === 'popovers', 'text-white': subMenuSelected === 'popovers' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Popovers</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="progress()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="progress()" [ngClass]="{ 'active': subMenuSelected === 'progress', 'text-white': subMenuSelected === 'progress' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Progress</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="spinners()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="spinners()" [ngClass]="{ 'active': subMenuSelected === 'spinners', 'text-white': subMenuSelected === 'spinners' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Spinners</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="tabs()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="tabs()" [ngClass]="{ 'active': subMenuSelected === 'tabs', 'text-white': subMenuSelected === 'tabs' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Tabs</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="tooltips()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="tooltips()" [ngClass]="{ 'active': subMenuSelected === 'tooltips', 'text-white': subMenuSelected === 'tooltips' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Tooltips</button>
                   </li>
                   <li><span
-                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="videos()"
+                        class="absolute right-4 block rounded bg-primary px-2 py-1 text-xs font-medium text-white">Pro</span><button (click)="videos()" [ngClass]="{ 'active': subMenuSelected === 'videos', 'text-white': subMenuSelected === 'videos' }"
                       class="group relative flex items-center gap-2.5 rounded-md px-4 font-medium text-bodydark2 duration-300 ease-in-out hover:text-white">Videos</button>
                   </li>
                 </ul>
