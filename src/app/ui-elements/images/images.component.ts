@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { MatCard, MatCardContent } from '@angular/material/card';
 
 @Component({
   selector: 'app-images',
   standalone: true,
-  imports: [],
+  imports: [MatCard,MatCardContent],
   templateUrl: './images.component.html',
   styleUrl: './images.component.scss'
 })

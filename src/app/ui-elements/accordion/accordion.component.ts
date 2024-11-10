@@ -1,10 +1,12 @@
 import { CommonModule, NgClass } from '@angular/common';
 import { Component, Input, NgModule, OnInit } from '@angular/core';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon'
 
 @Component({
   selector: 'app-accordion',
   standalone: true,
-  imports: [NgClass,CommonModule],
+  imports: [MatExpansionModule, MatIconModule,CommonModule],
   templateUrl: './accordion.component.html',
   styleUrl: './accordion.component.scss'
 })
