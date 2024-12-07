@@ -1,6 +1,6 @@
 // Import Tailwind CSS 
 @use "tailwindcss/base";
-@use "tailwindcss/components"; 
+@use "tailwindcss/components";
 @use "tailwindcss/utilities";
 
 @import "./../material.style.scss";
@@ -17,7 +17,7 @@
     \*******************************************************************************************************************************************************/
 
 
-    .datatable-wrapper.no-header .datatable-container {
+.datatable-wrapper.no-header .datatable-container {
   border-top: 1px solid #d9d9d9;
 }
 
@@ -526,8 +526,8 @@ text,
   -webkit-box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0, 0, 0, 0.08);
   box-shadow: 1px 0 0 #e6e6e6, -1px 0 0 #e6e6e6, 0 1px 0 #e6e6e6, 0 -1px 0 #e6e6e6, 0 3px 13px rgba(0, 0, 0, 0.08)
 }
-zzz
-.flatpickr-calendar.open,
+
+zzz .flatpickr-calendar.open,
 .flatpickr-calendar.inline {
   opacity: 1;
   max-height: 640px;
@@ -5256,10 +5256,10 @@ body {
   border-color: rgb(251 84 84 / var(--tw-border-opacity));
 }
 
-.border-secondary {
-  --tw-border-opacity: 1;
-  border-color: rgb(128 202 238 / var(--tw-border-opacity));
-}
+// .border-secondary {
+//   --tw-border-opacity: 1;
+//   border-color: rgb(128 202 238 / var(--tw-border-opacity));
+// }
 
 .border-stroke {
   --tw-border-opacity: 1;
@@ -5561,10 +5561,10 @@ body {
   background-color: rgb(251 84 84 / 0.08);
 }
 
-.bg-secondary {
-  --tw-bg-opacity: 1;
-  background-color: rgb(128 202 238 / var(--tw-bg-opacity));
-}
+// .bg-secondary {
+//   --tw-bg-opacity: 1;
+//   background-color: rgb(128 202 238 / var(--tw-bg-opacity));
+// }
 
 .bg-stroke {
   --tw-bg-opacity: 1;
@@ -6411,10 +6411,10 @@ body {
   color: rgb(251 84 84 / var(--tw-text-opacity));
 }
 
-.text-secondary {
-  --tw-text-opacity: 1;
-  color: rgb(128 202 238 / var(--tw-text-opacity));
-}
+// .text-secondary {
+//   --tw-text-opacity: 1;
+//   color: rgb(128 202 238 / var(--tw-text-opacity));
+// }
 
 .text-stroke {
   --tw-text-opacity: 1;

@@ -1,15 +1,10 @@
 <main>
   <!-- Breadcrumb Start -->
   <div class="mb-6 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-    <h2 class="text-title-md2 font-bold text-black dark:text-white">
-      Buttons
-    </h2>
-
+    <h2 class="text-title-md2 font-bold text-black dark:text-white">Buttons</h2>
     <nav>
       <ol class="flex items-center gap-2">
-        <li>
-          <a class="font-medium" href="index.html">Dashboard /</a>
-        </li>
+        <li><a class="font-medium" href="index.html">Dashboard /</a></li>
         <li class="font-medium text-primary">Buttons</li>
       </ol>
     </nav>
@@ -19,34 +14,30 @@
   <!-- Normal Button Items -->
   <div class="mb-10 rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
     <div class="border-b border-stroke px-7 py-4 dark:border-strokedark">
-      <h3 class="font-medium text-black dark:text-white">
-        Normal Button
-      </h3>
+      <h3 class="font-medium text-black dark:text-white">Normal Button</h3>
     </div>
 
     <div class="p-4 md:p-6 xl:p-9">
-      <!-- Primary Buttons -->
+      <!-- Button Groups -->
       <div class="mb-7.5 flex flex-wrap gap-5 xl:gap-20">
-        <button mat-button class="custom-button">Button</button>
-        <button mat-button class="custom-button rounded">Button</button>
-        <button mat-button class="custom-button fully-rounded">Button</button>
-        <button mat-button class="custom-button bordered">Button</button>
+        <button mat-button class="btn-primary rectangle">Button</button>
+        <button mat-button class="btn-primary rounded">Button</button>
+        <button mat-button class="btn-primary fully-rounded">Button</button>
+        <button mat-button class="btn-primary rounded bordered">Button</button>
       </div>
 
-      <!-- Green Buttons -->
       <div class="mb-7.5 flex flex-wrap gap-5 xl:gap-20">
-        <button mat-button class="custom-button green">Button</button>
-        <button mat-button class="custom-button green rounded">Button</button>
-        <button mat-button class="custom-button green fully-rounded">Button</button>
-        <button mat-button class="custom-button green bordered">Button</button>
+        <button mat-button class="btn-secondary rectangle">Button</button>
+        <button mat-button class="btn-secondary rounded">Button</button>
+        <button mat-button class="btn-secondary fully-rounded">Button</button>
+        <button mat-button class="btn-secondary rounded bordered">Button</button>
       </div>
 
-      <!-- Black Buttons -->
       <div class="mb-7.5 flex flex-wrap gap-5 xl:gap-20">
-        <button mat-button class="custom-button black">Button</button>
-        <button mat-button class="custom-button black rounded">Button</button>
-        <button mat-button class="custom-button black fully-rounded">Button</button>
-        <button mat-button class="custom-button black bordered">Button</button>
+        <button mat-button class="btn-tertiary rectangle">Button</button>
+        <button mat-button class="btn-tertiary rounded">Button</button>
+        <button mat-button class="btn-tertiary fully-rounded">Button</button>
+        <button mat-button class="btn-tertiary rounded bordered">Button</button>
       </div>
     </div>
   </div>
@@ -54,76 +45,34 @@
   <!-- Button With Icon Items -->
   <div class="mb-10 rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
     <div class="border-b border-stroke px-7 py-4 dark:border-strokedark">
-      <h3 class="font-medium text-black dark:text-white">
-        Button With Icon
-      </h3>
+      <h3 class="font-medium text-black dark:text-white">Button With Icon</h3>
     </div>
 
     <div class="p-4 md:p-6 xl:p-9">
+      <!-- Rectangle Buttons With Icon -->
       <div class="mb-7.5 flex flex-wrap gap-5 xl:gap-7.5">
-        <button mat-button class="custom-button">
-          <mat-icon>mail</mat-icon>
-          Button With Icon
-        </button>
-
-        <button mat-button class="custom-button green">
-          <mat-icon>mail</mat-icon>
-          Button With Icon
-        </button>
-
-        <button mat-button class="custom-button black">
-          <mat-icon>mail</mat-icon>
-          Button With Icon
-        </button>
-
-        <button mat-button class="custom-button icon bordered">
-          <mat-icon>mail</mat-icon>
-          Button With Icon
-        </button>
+        <button mat-button class="btn-primary rectangle"><mat-icon>mail</mat-icon>Button With Icon</button>
+        <button mat-button class="btn-secondary rectangle"><mat-icon>mail</mat-icon>Button With Icon</button>
+        <button mat-button class="btn-tertiary rectangle"><mat-icon>mail</mat-icon>Button With Icon</button>
+        <button mat-button class="btn-primary bordered rectangle"><mat-icon>mail</mat-icon>Button With Icon</button>
       </div>
 
+      <!-- Rounded Buttons With Icon -->
       <div class="mb-7.5 flex flex-wrap gap-5 xl:gap-7.5">
-        <button mat-button class="custom-button rounded">
-          <mat-icon>shopping_cart</mat-icon>
-          Button With Icon
-        </button>
-
-        <button mat-button class="custom-button green rounded">
-          <mat-icon>shopping_cart</mat-icon>
-          Button With Icon
-        </button>
-
-        <button mat-button class="custom-button black rounded">
-          <mat-icon>shopping_cart</mat-icon>
-          Button With Icon
-        </button>
-
-        <button mat-button class="custom-button icon bordered rounded">
-          <mat-icon>shopping_cart</mat-icon>
-          Button With Icon
-        </button>
+        <button mat-button class="btn-primary rounded"><mat-icon>shopping_cart</mat-icon>Button With Icon</button>
+        <button mat-button class="btn-secondary rounded"><mat-icon>shopping_cart</mat-icon>Button With Icon</button>
+        <button mat-button class="btn-tertiary rounded"><mat-icon>shopping_cart</mat-icon>Button With Icon</button>
+        <button mat-button class="btn-primary bordered rounded"><mat-icon>shopping_cart</mat-icon>Button With
+          Icon</button>
       </div>
 
+      <!-- Fully Rounded Buttons With Icon -->
       <div class="mb-7.5 flex flex-wrap gap-5 xl:gap-7.5">
-        <button mat-button class="custom-button fully-rounded">
-          <mat-icon>person</mat-icon>
-          Button With Icon
-        </button>
-
-        <button mat-button class="custom-button green fully-rounded">
-          <mat-icon>person</mat-icon>
-          Button With Icon
-        </button>
-
-        <button mat-button class="custom-button black fully-rounded">
-          <mat-icon>person</mat-icon>
-          Button With Icon
-        </button>
-
-        <button mat-button class="custom-button icon bordered fully-rounded">
-          <mat-icon>person</mat-icon>
-          Button With Icon
-        </button>
+        <button mat-button class="btn-primary fully-rounded"><mat-icon>person</mat-icon>Button With Icon</button>
+        <button mat-button class="btn-secondary fully-rounded"><mat-icon>person</mat-icon>Button With Icon</button>
+        <button mat-button class="btn-tertiary fully-rounded"><mat-icon>person</mat-icon>Button With Icon</button>
+        <button mat-button class="btn-primary bordered fully-rounded"><mat-icon>person</mat-icon>Button With
+          Icon</button>
       </div>
     </div>
   </div>
