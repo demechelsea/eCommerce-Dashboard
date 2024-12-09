@@ -1,4 +1,3 @@
-/* General Styles for Buttons */
 button.mat-mdc-button {
   @apply px-10 py-7 font-medium text-center flex items-center justify-center transition-all duration-300;
 }
@@ -16,9 +15,6 @@ button.mat-mdc-button.fully-rounded {
   @apply rounded-full; /* Fully rounded */
 }
 
-/* Color Variants */
-
-/* Primary (Blue: #3b50df) */
 button.mat-mdc-button.btn-primary {
   @apply bg-primary text-white;
 }
@@ -27,7 +23,6 @@ button.mat-mdc-button.btn-primary:hover {
   @apply bg-primary-hover;
 }
 
-/* Secondary (Green: #10b982) */
 button.mat-mdc-button.btn-secondary {
   @apply bg-secondary text-white;
 }
@@ -36,7 +31,6 @@ button.mat-mdc-button.btn-secondary:hover {
   @apply bg-secondary-hover;
 }
 
-/* Tertiary (Dark: #1c2333) */
 button.mat-mdc-button.btn-tertiary {
   @apply bg-tertiary text-white;
 }
@@ -47,20 +41,86 @@ button.mat-mdc-button.btn-tertiary:hover {
 
 /* Apply border when the button has the 'bordered' class */
 button.mat-mdc-button.bordered {
-  @apply border-2 border-solid; /* Default border style */
+  @apply border border-solid; /* Default border style */
 }
 
-/* Bordered Primary Button */
+/* Bordered Button Styles */
 button.mat-mdc-button.btn-primary.bordered {
   @apply border-primary text-primary bg-transparent; /* Bordered primary button style */
 }
 
-/* Bordered Secondary Button */
 button.mat-mdc-button.btn-secondary.bordered {
   @apply border-secondary text-secondary bg-transparent; /* Bordered secondary button style */
 }
 
-/* Bordered Tertiary Button */
 button.mat-mdc-button.btn-tertiary.bordered {
   @apply border-tertiary text-tertiary bg-transparent; /* Bordered tertiary button style */
+}
+
+/* General Button Padding */
+.btn-group > button.mat-mdc-button {
+  @apply px-8 py-5 border; /* Add border to buttons */
+  border-color: rgb(226 232 240 / var(--tw-border-opacity)); /* Set the desired border color */
+}
+
+/* Adjust the second and third buttons for consistency */
+.btn-group > button.mat-mdc-button:nth-child(n+2) {
+  @apply border; /* Ensure border is applied */
+  border-color: rgb(226 232 240 / var(--tw-border-opacity)); /* Apply the same border color */
+}
+
+/* First Button: Right-side rectangle */
+.btn-group > button.mat-mdc-button:first-child {
+  @apply rounded-r-none; /* Remove right-side rounding */
+}
+
+/* Second Button: No rounded corners */
+.btn-group > button.mat-mdc-button:nth-child(2) {
+  @apply rounded-none; /* Remove both rounded corners */
+}
+
+/* Third Button: Left-side rectangle */
+.btn-group > button.mat-mdc-button:last-child {
+  @apply rounded-l-none; /* Remove left-side rounding */
+}
+
+/* Rounded Group */
+.btn-group.rounded > button.mat-mdc-button:first-child {
+  @apply rounded-l-md rounded-r-none; /* Left rounded, right rectangle */
+}
+
+.btn-group.rounded > button.mat-mdc-button:nth-child(2) {
+  @apply rounded-none; /* No rounding */
+}
+
+.btn-group.rounded > button.mat-mdc-button:last-child {
+  @apply rounded-r-md rounded-l-none; /* Right rounded, left rectangle */
+}
+
+/* Fully Rounded Group */
+.btn-group.fully-rounded > button.mat-mdc-button:first-child {
+  @apply rounded-l-full rounded-r-none; /* Left fully rounded, right rectangle */
+}
+
+.btn-group.fully-rounded > button.mat-mdc-button:nth-child(2) {
+  @apply rounded-none; /* No rounding */
+}
+
+.btn-group.fully-rounded > button.mat-mdc-button:last-child {
+  @apply rounded-r-full rounded-l-none; /* Right fully rounded, left rectangle */
+}
+
+/* General hover styles for the second and third buttons */
+.btn-group > button.mat-mdc-button:nth-child(n+2):hover {
+  @apply text-white bg-primary;
+}
+
+/* Adjust rounded group hover styles */
+.btn-group.rounded > button.mat-mdc-button:nth-child(n+2):hover {
+  @apply text-white bg-primary;
+}
+
+/* Adjust fully rounded group hover styles */
+.btn-group.fully-rounded > button.mat-mdc-button:nth-child(n+2):hover {
+  @apply text-white bg-primary;
 }
