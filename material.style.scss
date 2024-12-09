@@ -66,6 +66,7 @@ button.mat-mdc-button.btn-tertiary.bordered {
 /* Adjust the second and third buttons for consistency */
 .btn-group > button.mat-mdc-button:nth-child(n+2) {
   @apply border; /* Ensure border is applied */
+  @apply text-[#352924]; /* Set the text color */
   border-color: rgb(226 232 240 / var(--tw-border-opacity)); /* Apply the same border color */
 }
 
