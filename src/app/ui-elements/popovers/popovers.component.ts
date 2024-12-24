@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-popovers',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,MatButtonModule],
   templateUrl: './popovers.component.html',
   styleUrl: './popovers.component.scss'
 })

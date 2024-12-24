@@ -27,15 +27,15 @@
           <div class="p-4 sm:p-6 xl:p-10">
             <div class="flex max-w-[470px] flex-col gap-7">
               <div class="relative h-2.5 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 h-full w-10/12 rounded-full bg-primary"></div>
+                <mat-progress-bar mode="determinate" value="83" class="progressBar"></mat-progress-bar>
               </div>
 
               <div class="relative h-2.5 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 h-full w-8/12 rounded-full bg-primary"></div>
+                <mat-progress-bar mode="determinate" value="66.5" class="progressBar"></mat-progress-bar>
               </div>
 
               <div class="relative h-2.5 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 h-full w-11/12 rounded-full bg-primary"></div>
+                <mat-progress-bar mode="determinate" value="92" class="progressBar"></mat-progress-bar>
               </div>
             </div>
           </div>
@@ -51,33 +51,32 @@
           <div class="p-4 sm:p-6 xl:p-10">
             <div class="flex max-w-[470px] flex-col gap-10 pt-5 xl:pt-4">
               <div class="relative h-2.5 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 h-full w-9/12 rounded-full bg-primary">
-                  <span class="absolute -right-4 bottom-full z-1 mb-2 inline-block rounded-sm bg-primary px-2 py-1 text-xs font-bold text-white">
-                    <span class="absolute -bottom-1 left-1/2 -z-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-primary"></span>
-                    75%
-                  </span>
-                </div>
+                <mat-progress-bar mode="determinate" value="75" class="progressBar"></mat-progress-bar>
+                <span class="absolute -right-4 bottom-full z-1 mb-2 inline-block rounded-sm bg-primary px-2 py-1 text-xs font-bold text-white">
+                  <span class="absolute -bottom-1 left-1/2 -z-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-primary"></span>
+                  75%
+                </span>
               </div>
-
+          
               <div class="relative h-2.5 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 h-full w-1/2 rounded-full bg-primary">
-                  <span class="absolute -right-4 bottom-full z-1 mb-2 inline-block rounded-sm bg-primary px-2 py-1 text-xs font-bold text-white">
-                    <span class="absolute -bottom-1 left-1/2 -z-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-primary"></span>
-                    50%
-                  </span>
-                </div>
+                <mat-progress-bar mode="determinate" value="50" class="progressBar"></mat-progress-bar>
+                <span class="absolute -right-4 bottom-full z-1 mb-2 inline-block rounded-sm bg-primary px-2 py-1 text-xs font-bold text-white">
+                  <span class="absolute -bottom-1 left-1/2 -z-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-primary"></span>
+                  50%
+                </span>
               </div>
-
+          
               <div class="relative h-2.5 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 h-full w-4/5 rounded-full bg-primary">
-                  <span class="absolute -right-4 bottom-full z-1 mb-2 inline-block rounded-sm bg-primary px-2 py-1 text-xs font-bold text-white">
-                    <span class="absolute -bottom-1 left-1/2 -z-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-primary"></span>
-                    80%
-                  </span>
-                </div>
+                <mat-progress-bar mode="determinate" value="80" class="progressBar"></mat-progress-bar>
+                <span class="absolute -right-4 bottom-full z-1 mb-2 inline-block rounded-sm bg-primary px-2 py-1 text-xs font-bold text-white">
+                  <span class="absolute -bottom-1 left-1/2 -z-1 h-2 w-2 -translate-x-1/2 rotate-45 bg-primary"></span>
+                  80%
+                </span>
               </div>
             </div>
           </div>
+          
+          
         </div>
 
         <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -89,31 +88,28 @@
 
           <div class="p-4 sm:p-6 xl:p-10">
             <div class="flex max-w-[470px] flex-col gap-7">
-              <div class="relative h-4 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 flex h-full w-1/2 items-center justify-center rounded-full bg-primary">
-                  <p class="my-auto text-center text-[10px] font-bold leading-none text-white">
-                    50%
-                  </p>
+              <div class="relative h-4 w-full">
+                <mat-progress-bar mode="determinate" value="50" class="h-full progressBar"></mat-progress-bar>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <p class="text-[10px] font-bold leading-none text-white progress-text">50%</p>
                 </div>
               </div>
-
-              <div class="relative h-4 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 flex h-full w-4/5 items-center justify-center rounded-full bg-primary">
-                  <p class="my-auto text-center text-[10px] font-bold leading-none text-white">
-                    80%
-                  </p>
+              <div class="relative h-4 w-full">
+                <mat-progress-bar mode="determinate" value="80" class="h-full progressBar"></mat-progress-bar>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <p class="text-[10px] font-bold leading-none text-white progress-text">80%</p>
                 </div>
               </div>
-
-              <div class="relative h-4 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 flex h-full w-3/4 items-center justify-center rounded-full bg-primary">
-                  <p class="my-auto text-center text-[10px] font-bold leading-none text-white">
-                    75%
-                  </p>
+              <div class="relative h-4 w-full">
+                <mat-progress-bar mode="determinate" value="75" class="h-full progressBar"></mat-progress-bar>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <p class="text-[10px] font-bold leading-none text-white progress-text">75%</p>
                 </div>
               </div>
             </div>
           </div>
+          
+          
         </div>
 
         <div class="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
@@ -124,27 +120,14 @@
           </div>
 
           <div class="p-4 sm:p-6 xl:p-10">
-            <div class="flex max-w-[470px] flex-col gap-7">
-              <div class="relative h-2.5 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 h-full w-10/12 rounded-full bg-primary"></div>
+              <div class="flex max-w-[470px] flex-col gap-7">
+                <!-- Progress Bars -->
+                <mat-progress-bar mode="determinate" value="83.33" class="h-full"></mat-progress-bar>
+                <mat-progress-bar mode="determinate" value="66.67" class="h-full"></mat-progress-bar>
+                <mat-progress-bar mode="determinate" value="91.67" class="h-full"></mat-progress-bar>
+                <mat-progress-bar mode="determinate" value="33.33" class="h-full"></mat-progress-bar>
+                <mat-progress-bar mode="determinate" value="25" class="h-full"></mat-progress-bar>
               </div>
-
-              <div class="relative h-2.5 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 h-full w-8/12 rounded-full bg-[#3CA745]"></div>
-              </div>
-
-              <div class="relative h-2.5 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 h-full w-11/12 rounded-full bg-[#F9C107]"></div>
-              </div>
-
-              <div class="relative h-2.5 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 h-full w-4/12 rounded-full bg-[#DC3545]"></div>
-              </div>
-
-              <div class="relative h-2.5 w-full rounded-full bg-stroke dark:bg-strokedark">
-                <div class="absolute left-0 h-full w-3/12 rounded-full bg-[#3BA2B8]"></div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

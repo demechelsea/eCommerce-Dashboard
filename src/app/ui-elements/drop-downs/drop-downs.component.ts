@@ -1,10 +1,12 @@
 import { CommonModule, NgClass } from '@angular/common';
 import { Component, NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-drop-downs',
   standalone: true,
-  imports: [CommonModule],
+  imports: [MatButtonModule, MatIconModule, CommonModule],
   templateUrl: './drop-downs.component.html',
   styleUrl: './drop-downs.component.scss'
 })

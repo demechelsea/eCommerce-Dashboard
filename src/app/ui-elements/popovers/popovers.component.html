@@ -30,7 +30,7 @@
               <div class="w-full px-4 sm:w-1/2 xl:w-1/4">
                 <div class="mt-10 text-center sm:mb-60">
                   <div x-data="{popover: false}"  class="relative inline-block">
-                    <button (click)="popover_1 = !popover_1;popover_2 = false;popover_3 = false;popover_4 = false;popover_5 = false;" class="inline-flex rounded-md bg-primary px-5 py-2.5 font-medium text-white">
+                    <button mat-button class="btn-primary rounded" (click)="popover_1 = !popover_1;popover_2 = false;popover_3 = false;popover_4 = false;popover_5 = false;">
                       Popover on Bottom
                     </button>
                     <div *ngIf="popover_1" class="absolute left-1/2 top-full z-20 mt-3 w-max max-w-[311px] -translate-x-1/2 rounded bg-white drop-shadow-5 dark:bg-meta-4" >
@@ -54,7 +54,7 @@
               <div class="w-full px-4 sm:w-1/2 xl:w-1/4">
                 <div class="mt-10 text-center sm:mb-60">
                   <div x-data="{popover: false}"  class="relative inline-block">
-                    <button (click)="popover_2 = !popover_2;popover_1 = false;popover_3 = false;popover_4 = false;popover_5 = false;" class="inline-flex rounded-md bg-primary px-5 py-2.5 font-medium text-white">
+                    <button mat-button class="btn-primary rounded" (click)="popover_2 = !popover_2;popover_1 = false;popover_3 = false;popover_4 = false;popover_5 = false;">
                       Popover on Right
                     </button>
                     <div *ngIf="popover_2" class="absolute left-full top-0 z-20 ml-3 w-max max-w-[311px] rounded bg-white drop-shadow-5 dark:bg-meta-4" >
@@ -78,7 +78,7 @@
               <div class="w-full px-4 sm:w-1/2 xl:w-1/4">
                 <div class="mt-10 text-center sm:mb-60">
                   <div x-data="{popover: false}" class="relative inline-block">
-                    <button (click)="popover_3 = !popover_3;popover_2 = false;popover_1 = false;popover_4 = false;popover_5 = false;" class="inline-flex rounded-md bg-primary px-5 py-2.5 font-medium text-white">
+                    <button mat-button class="btn-primary rounded" (click)="popover_3 = !popover_3;popover_2 = false;popover_1 = false;popover_4 = false;popover_5 = false;">
                       Popover on Top
                     </button>
                     <div *ngIf="popover_3" class="absolute bottom-full left-1/2 z-20 mb-3 w-max max-w-[311px] -translate-x-1/2 rounded bg-white drop-shadow-5 dark:bg-meta-4" >
@@ -102,7 +102,7 @@
               <div class="w-full px-4 sm:w-1/2 xl:w-1/4">
                 <div class="mt-10 text-center sm:mb-60">
                   <div x-data="{popover: false}"  class="relative inline-block">
-                    <button (click)="popover_4 = !popover_4;popover_2 = false;popover_3 = false;popover_1 = false;popover_5 = false;" class="inline-flex rounded-md bg-primary px-5 py-2.5 font-medium text-white">
+                    <button mat-button class="btn-primary rounded" (click)="popover_4 = !popover_4;popover_2 = false;popover_3 = false;popover_1 = false;popover_5 = false;">
                       Popover on Left
                     </button>
                     <div *ngIf="popover_4" class="absolute right-full top-0 z-20 mr-3 w-max max-w-[311px] rounded bg-white drop-shadow-5 dark:bg-meta-4" >
@@ -139,7 +139,7 @@
               <div class="w-full px-4 sm:w-1/2 xl:w-1/4">
                 <div class="mb-60 mt-10">
                   <div x-data="{popover: false}"  class="relative inline-block">
-                    <button (click)="popover_5 = !popover_5;popover_2 = false;popover_3 = false;popover_4 = false;popover_1 = false;" class="inline-flex rounded-md bg-primary px-5 py-2.5 font-medium text-white">
+                    <button mat-button class="btn-primary rounded" (click)="popover_5 = !popover_5;popover_2 = false;popover_3 = false;popover_4 = false;popover_1 = false;">
                       Popover Text
                     </button>
                     <div *ngIf="popover_5" class="absolute left-full top-0 z-20 ml-3 w-max max-w-[533px] rounded-md bg-white p-4 font-medium drop-shadow-5 dark:bg-meta-4 sm:p-5 xl:p-7.5" >
@@ -158,10 +158,10 @@
                         dui.
                       </p>
                       <div class="mt-6 flex items-center gap-4">
-                        <button class="inline-block rounded bg-primary px-7.5 py-1 font-medium text-white hover:bg-opacity-90">
+                        <button mat-button class="btn-primary rounded">
                           Yes
                         </button>
-                        <button class="inline-block rounded bg-body px-7.5 py-1 font-medium text-white hover:bg-opacity-90">
+                        <button mat-button class="btn-gray rounded">
                           No
                         </button>
                       </div>

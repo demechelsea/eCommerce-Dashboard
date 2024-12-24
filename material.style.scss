@@ -197,6 +197,11 @@ button.mat-mdc-button.btn-danger.bordered {
 button.mat-mdc-button.btn-success.bordered {
   @apply border-success text-[#3CA745] bg-transparent; 
 }
+
 button.mat-mdc-button.btn-info.bordered {
   @apply border-info text-[#3BA2B8] bg-transparent; 
+}
+
+button.mat-mdc-button.btn-primary.tooltip {
+  @apply px-4.5 py-2  bg-primary text-white;
 }

@@ -1,0 +1,84 @@
+::ng-deep .mat-mdc-progress-bar {
+    --mdc-linear-progress-track-height: 14px;
+    /* Adjust the height */
+    --mdc-linear-progress-active-indicator-height: 14px;
+    /* Adjust the active bar height */
+    position: relative;
+    /* Ensure the progress bar is positioned relative */
+    --mdc-linear-progress-active-indicator-color: #3a51de; /* Blue */
+}
+
+/* Apply specific colors for different progress bar values */
+::ng-deep .mat-mdc-progress-bar[value="83.33"] {
+    --mdc-linear-progress-active-indicator-color: #3a51de; /* Blue */
+}
+
+::ng-deep .mat-mdc-progress-bar[value="66.67"] {
+    --mdc-linear-progress-active-indicator-color: #3CA745; /* Green */
+}
+
+::ng-deep .mat-mdc-progress-bar[value="91.67"] {
+    --mdc-linear-progress-active-indicator-color: #F9C107; /* Yellow */
+}
+
+::ng-deep .mat-mdc-progress-bar[value="33.33"] {
+    --mdc-linear-progress-active-indicator-color: #DC3545; /* Red */
+}
+
+::ng-deep .mat-mdc-progress-bar[value="25"] {
+    --mdc-linear-progress-active-indicator-color: #3BA2B8; /* Blue-Green */
+}
+
+/* Style for the active bar */
+::ng-deep .mat-mdc-progress-bar .mdc-linear-progress__primary-bar {
+    border-radius: 15px;
+    /* Inner active bar radius */
+    overflow: hidden;
+    /* Ensure rounded corners are visible */
+}
+
+/* Apply radius to the background buffer for consistency */
+::ng-deep .mat-mdc-progress-bar .mdc-linear-progress__buffer {
+    border-radius: 15px;
+}
+
+.progress-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Position the percentage text based on progress value */
+::ng-deep .mat-mdc-progress-bar[value="83.33"]+.absolute .progress-text {
+    left: 41.67%;
+}
+
+::ng-deep .mat-mdc-progress-bar[value="66.67"]+.absolute .progress-text {
+    left: 33.33%;
+}
+
+::ng-deep .mat-mdc-progress-bar[value="91.67"]+.absolute .progress-text {
+    left: 45.83%;
+}
+
+::ng-deep .mat-mdc-progress-bar[value="33.33"]+.absolute .progress-text {
+    left: 16.67%;
+}
+
+::ng-deep .mat-mdc-progress-bar[value="25"]+.absolute .progress-text {
+    left: 12.5%;
+}
+
+::ng-deep .mat-mdc-progress-bar[value="50"]+.absolute .progress-text {
+    left: 25%;
+}
+
+::ng-deep .mat-mdc-progress-bar[value="80"]+.absolute .progress-text {
+    left: 40%;
+}
+
+::ng-deep .mat-mdc-progress-bar[value="75"]+.absolute .progress-text {
+    left: 37.5%;
+}
