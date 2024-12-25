@@ -205,3 +205,53 @@ button.mat-mdc-button.btn-info.bordered {
 button.mat-mdc-button.btn-primary.tooltip {
   @apply px-4.5 py-2  bg-primary text-white;
 }
+
+
+
+/* Tailwind-based styling for the mat-card components */
+
+/* Style the mat-card-subtitle */
+.mat-mdc-card .mat-mdc-card-header .mat-mdc-card-subtitle.card-subtitle {
+  @apply text-xs font-medium; /* Adjust the text size and color */
+}
+
+/* Style the mat-card-title */
+.mat-mdc-card .mat-mdc-card-header .mat-mdc-card-title.card-title {
+  @apply font-medium text-black dark:text-white; /* Text color adjustment for light/dark mode */
+}
+
+/* Style the mat-card-header */
+.mat-mdc-card .mat-mdc-card-header.card-header {
+  @apply flex items-center gap-3 px-6 py-5;
+}
+
+/* Style the mat-card-content */
+.mat-mdc-card .mat-mdc-card-content.card-content {
+  @apply p-6;
+}
+
+/* Optional: Style mat-card image */
+.mat-mdc-card .mat-mdc-card-image.mdc-card__media {
+  @apply rounded-lg; /* Optional: rounded corners for images */
+}
+
+/* Style mat-card heading */
+.mat-mdc-card .card-heading {
+  @apply mb-3 text-xl font-semibold text-black dark:text-white;
+}
+
+/* Optional: Style mat-card description */
+.mat-mdc-card .card-description {
+  @apply font-medium text-gray-700 dark:text-gray-300;
+}
+
+/* Ensure mat-card has no rounded corners */
+.mat-mdc-card {
+  @apply bg-white rounded-none border border-stroke shadow-default dark:border-strokedark dark:bg-boxdark; /* White background, border, and shadow */
+  border-radius: 0rem !important; /* Rounded corners */
+}
+
+/* Ensure mat-card text color is consistent in both light and dark modes */
+.mat-mdc-card .mat-mdc-card-content.card-content {
+  @apply text-black dark:text-white; /* Text color for content */
+}
